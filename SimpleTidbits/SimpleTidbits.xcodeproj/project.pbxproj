@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		790546C2106EDDF1006ECB61 /* UIAlertViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546C0106EDDF1006ECB61 /* UIAlertViewAdditions.h */; };
+		790546C3106EDDF1006ECB61 /* UIAlertViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546C1106EDDF1006ECB61 /* UIAlertViewAdditions.m */; };
+		790546C6106EDEB0006ECB61 /* UIColorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546C4106EDEB0006ECB61 /* UIColorAdditions.h */; };
+		790546C7106EDEB0006ECB61 /* UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546C5106EDEB0006ECB61 /* UIColorAdditions.m */; };
+		790546DE106EDF20006ECB61 /* UIFontAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546DC106EDF20006ECB61 /* UIFontAdditions.h */; };
+		790546DF106EDF20006ECB61 /* UIFontAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546DD106EDF20006ECB61 /* UIFontAdditions.m */; };
+		790546E8106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546E6106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.h */; };
+		790546E9106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546E7106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.m */; };
+		790546F1106EE037006ECB61 /* NSStringAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546EF106EE037006ECB61 /* NSStringAdditions.h */; };
+		790546F2106EE037006ECB61 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546F0106EE037006ECB61 /* NSStringAdditions.m */; };
+		790546FB106EE354006ECB61 /* UIImageViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546F9106EE354006ECB61 /* UIImageViewAdditions.h */; };
+		790546FC106EE354006ECB61 /* UIImageViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546FA106EE354006ECB61 /* UIImageViewAdditions.m */; };
+		790546FF106EE463006ECB61 /* NSNumberAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546FD106EE463006ECB61 /* NSNumberAdditions.h */; };
+		79054700106EE463006ECB61 /* NSNumberAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546FE106EE463006ECB61 /* NSNumberAdditions.m */; };
+		79054703106EE4CD006ECB61 /* NSArrayAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79054701106EE4CD006ECB61 /* NSArrayAdditions.h */; };
+		79054704106EE4CD006ECB61 /* NSArrayAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79054702106EE4CD006ECB61 /* NSArrayAdditions.m */; };
+		79054709106EE668006ECB61 /* NSDateAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79054707106EE668006ECB61 /* NSDateAdditions.h */; };
+		7905470A106EE668006ECB61 /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79054708106EE668006ECB61 /* NSDateAdditions.m */; };
+		79619099107EC3CD000937C1 /* STImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 79619097107EC3CD000937C1 /* STImageView.h */; };
+		7961909A107EC3CD000937C1 /* STImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79619098107EC3CD000937C1 /* STImageView.m */; };
+		7961909F107ECBB5000937C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7961909E107ECBB5000937C1 /* QuartzCore.framework */; };
+		7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = 7979A56E1080519F00A31539 /* SimpleTidbits.h */; };
+		79A5DADA106ED8FD00891E58 /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */; };
+		79A5DADB106ED8FD00891E58 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */; };
+		79BF1FDC1072E805003FBD85 /* STSimpleURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */; };
+		79BF1FDD1072E805003FBD85 /* STSimpleURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BF1FDB1072E805003FBD85 /* STSimpleURLConnection.m */; };
+		79BF202010730EAE003FBD85 /* STFileCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BF201E10730EAE003FBD85 /* STFileCache.h */; };
+		79BF202110730EAE003FBD85 /* STFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 79BF201F10730EAE003FBD85 /* STFileCache.m */; };
+		79C003C41070063F00C81ACB /* STNetworkIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 79C003C21070063F00C81ACB /* STNetworkIndicator.h */; };
+		79C003C51070063F00C81ACB /* STNetworkIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C003C31070063F00C81ACB /* STNetworkIndicator.m */; };
+		AA747D9F0F9514B9006C5449 /* SimpleTidbits_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* SimpleTidbits_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		790546C0106EDDF1006ECB61 /* UIAlertViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertViewAdditions.h; sourceTree = "<group>"; };
+		790546C1106EDDF1006ECB61 /* UIAlertViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewAdditions.m; sourceTree = "<group>"; };
+		790546C4106EDEB0006ECB61 /* UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAdditions.h; sourceTree = "<group>"; };
+		790546C5106EDEB0006ECB61 /* UIColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorAdditions.m; sourceTree = "<group>"; };
+		790546DC106EDF20006ECB61 /* UIFontAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFontAdditions.h; sourceTree = "<group>"; };
+		790546DD106EDF20006ECB61 /* UIFontAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFontAdditions.m; sourceTree = "<group>"; };
+		790546E6106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIActivityIndicatorViewAdditions.h; sourceTree = "<group>"; };
+		790546E7106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIActivityIndicatorViewAdditions.m; sourceTree = "<group>"; };
+		790546EF106EE037006ECB61 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		790546F0106EE037006ECB61 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		790546F9106EE354006ECB61 /* UIImageViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAdditions.h; sourceTree = "<group>"; };
+		790546FA106EE354006ECB61 /* UIImageViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAdditions.m; sourceTree = "<group>"; };
+		790546FD106EE463006ECB61 /* NSNumberAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberAdditions.h; sourceTree = "<group>"; };
+		790546FE106EE463006ECB61 /* NSNumberAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberAdditions.m; sourceTree = "<group>"; };
+		79054701106EE4CD006ECB61 /* NSArrayAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditions.h; sourceTree = "<group>"; };
+		79054702106EE4CD006ECB61 /* NSArrayAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditions.m; sourceTree = "<group>"; };
+		79054707106EE668006ECB61 /* NSDateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateAdditions.h; sourceTree = "<group>"; };
+		79054708106EE668006ECB61 /* NSDateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateAdditions.m; sourceTree = "<group>"; };
+		79619097107EC3CD000937C1 /* STImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STImageView.h; sourceTree = "<group>"; };
+		79619098107EC3CD000937C1 /* STImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STImageView.m; sourceTree = "<group>"; };
+		7961909E107ECBB5000937C1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		7979A56E1080519F00A31539 /* SimpleTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTidbits.h; sourceTree = "<group>"; };
+		79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimpleURLConnection.h; sourceTree = "<group>"; };
+		79BF1FDB1072E805003FBD85 /* STSimpleURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSimpleURLConnection.m; sourceTree = "<group>"; };
+		79BF201E10730EAE003FBD85 /* STFileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STFileCache.h; sourceTree = "<group>"; };
+		79BF201F10730EAE003FBD85 /* STFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STFileCache.m; sourceTree = "<group>"; };
+		79C003C21070063F00C81ACB /* STNetworkIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STNetworkIndicator.h; sourceTree = "<group>"; };
+		79C003C31070063F00C81ACB /* STNetworkIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STNetworkIndicator.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* SimpleTidbits_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTidbits_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libSimpleTidbits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpleTidbits.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				7961909F107ECBB5000937C1 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libSimpleTidbits.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* SimpleTidbits */ = {
+			isa = PBXGroup;
+			children = (
+				7979A56E1080519F00A31539 /* SimpleTidbits.h */,
+				79A5DAE3106EDCDC00891E58 /* Categories */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = SimpleTidbits;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7961909E107ECBB5000937C1 /* QuartzCore.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				79C003C21070063F00C81ACB /* STNetworkIndicator.h */,
+				79C003C31070063F00C81ACB /* STNetworkIndicator.m */,
+				79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */,
+				79BF1FDB1072E805003FBD85 /* STSimpleURLConnection.m */,
+				79BF201E10730EAE003FBD85 /* STFileCache.h */,
+				79BF201F10730EAE003FBD85 /* STFileCache.m */,
+				79619097107EC3CD000937C1 /* STImageView.h */,
+				79619098107EC3CD000937C1 /* STImageView.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* SimpleTidbits_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		79A5DAE3106EDCDC00891E58 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */,
+				79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */,
+				790546C0106EDDF1006ECB61 /* UIAlertViewAdditions.h */,
+				790546C1106EDDF1006ECB61 /* UIAlertViewAdditions.m */,
+				790546C4106EDEB0006ECB61 /* UIColorAdditions.h */,
+				790546C5106EDEB0006ECB61 /* UIColorAdditions.m */,
+				790546DC106EDF20006ECB61 /* UIFontAdditions.h */,
+				790546DD106EDF20006ECB61 /* UIFontAdditions.m */,
+				790546E6106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.h */,
+				790546E7106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.m */,
+				790546EF106EE037006ECB61 /* NSStringAdditions.h */,
+				790546F0106EE037006ECB61 /* NSStringAdditions.m */,
+				790546F9106EE354006ECB61 /* UIImageViewAdditions.h */,
+				790546FA106EE354006ECB61 /* UIImageViewAdditions.m */,
+				790546FD106EE463006ECB61 /* NSNumberAdditions.h */,
+				790546FE106EE463006ECB61 /* NSNumberAdditions.m */,
+				79054701106EE4CD006ECB61 /* NSArrayAdditions.h */,
+				79054702106EE4CD006ECB61 /* NSArrayAdditions.m */,
+				79054707106EE668006ECB61 /* NSDateAdditions.h */,
+				79054708106EE668006ECB61 /* NSDateAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* SimpleTidbits_Prefix.pch in Headers */,
+				79A5DADA106ED8FD00891E58 /* UIViewAdditions.h in Headers */,
+				790546C2106EDDF1006ECB61 /* UIAlertViewAdditions.h in Headers */,
+				790546C6106EDEB0006ECB61 /* UIColorAdditions.h in Headers */,
+				790546DE106EDF20006ECB61 /* UIFontAdditions.h in Headers */,
+				790546E8106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.h in Headers */,
+				790546F1106EE037006ECB61 /* NSStringAdditions.h in Headers */,
+				790546FB106EE354006ECB61 /* UIImageViewAdditions.h in Headers */,
+				790546FF106EE463006ECB61 /* NSNumberAdditions.h in Headers */,
+				79054703106EE4CD006ECB61 /* NSArrayAdditions.h in Headers */,
+				79054709106EE668006ECB61 /* NSDateAdditions.h in Headers */,
+				79C003C41070063F00C81ACB /* STNetworkIndicator.h in Headers */,
+				79BF1FDC1072E805003FBD85 /* STSimpleURLConnection.h in Headers */,
+				79BF202010730EAE003FBD85 /* STFileCache.h in Headers */,
+				79619099107EC3CD000937C1 /* STImageView.h in Headers */,
+				7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* SimpleTidbits */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "SimpleTidbits" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleTidbits;
+			productName = SimpleTidbits;
+			productReference = D2AAC07E0554694100DB518D /* libSimpleTidbits.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SimpleTidbits" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* SimpleTidbits */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* SimpleTidbits */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79A5DADB106ED8FD00891E58 /* UIViewAdditions.m in Sources */,
+				790546C3106EDDF1006ECB61 /* UIAlertViewAdditions.m in Sources */,
+				790546C7106EDEB0006ECB61 /* UIColorAdditions.m in Sources */,
+				790546DF106EDF20006ECB61 /* UIFontAdditions.m in Sources */,
+				790546E9106EDF8B006ECB61 /* UIActivityIndicatorViewAdditions.m in Sources */,
+				790546F2106EE037006ECB61 /* NSStringAdditions.m in Sources */,
+				790546FC106EE354006ECB61 /* UIImageViewAdditions.m in Sources */,
+				79054700106EE463006ECB61 /* NSNumberAdditions.m in Sources */,
+				79054704106EE4CD006ECB61 /* NSArrayAdditions.m in Sources */,
+				7905470A106EE668006ECB61 /* NSDateAdditions.m in Sources */,
+				79C003C51070063F00C81ACB /* STNetworkIndicator.m in Sources */,
+				79BF1FDD1072E805003FBD85 /* STSimpleURLConnection.m in Sources */,
+				79BF202110730EAE003FBD85 /* STFileCache.m in Sources */,
+				7961909A107EC3CD000937C1 /* STImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/SimpleTidbits.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimpleTidbits_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = SimpleTidbits;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/SimpleTidbits.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = SimpleTidbits_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = SimpleTidbits;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "SimpleTidbits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "SimpleTidbits" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
