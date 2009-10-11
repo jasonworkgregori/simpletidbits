@@ -105,6 +105,7 @@
 	{
 		STFileCache		*cache		= [[STFileCache alloc] initWithURL:self.url
 											   networkNamespace:self.networkNamespace];
+		cache.delegate	= self;
 		self.fileCache	= cache;
 		[cache release];
 		

@@ -229,8 +229,8 @@ static NSMutableSet			*ST_filesToSave			= nil;
 {
 	if (!self.url)
 	{
-		[self failed];
 		[[STNetworkIndicator sharedNetworkIndicator] checkNetworkUsageForNamespace:self.networkNamespace];
+		[self failed];
 		return;
 	}
 	
@@ -294,8 +294,8 @@ static NSMutableSet			*ST_filesToSave			= nil;
 		}
 		
 		fileCache.fileWasCached	= YES;
-		[fileCache success:nil];
 		[[STNetworkIndicator sharedNetworkIndicator] checkNetworkUsageForNamespace:fileCache.networkNamespace];
+		[fileCache success:nil];
 		return;
 	}
 	
@@ -348,8 +348,10 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	[waitList release];
 	
 	[ST_connections setValue:connection forKey:fileCache.path];
-	[connection release];
 	
+	[connection start];
+	[connection release];
+
 	return;
 }
 
@@ -406,7 +408,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 #pragma mark -
 #pragma mark Class Delegate Methods
 
-- (void)simpleURLConnectionDidFinishLoading:(STSimpleURLConnection *)connection
++ (void)simpleURLConnectionDidFinishLoading:(STSimpleURLConnection *)connection
 {
 	// save the file
 	// check if there is a file already there
@@ -425,11 +427,15 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	// mark downloaded
 	[ST_filesDownloaded addObject:connection.subContext];
 	
+	// retain all the fileCaches, we don't want them to be dealloced before we're done
+	NSSet		*fileCaches		= [connection.context copy];
+	[fileCaches makeObjectsPerformSelector:@selector(retain)];
+	
 	// tell fileCaches its finished
 	for (STFileCache *fileCache in connection.context)
 	{
-		[fileCache success:connection.data];
 		[[STNetworkIndicator sharedNetworkIndicator] decrementNetworkUsageForNamespace:fileCache.networkNamespace];
+		[fileCache success:connection.data];
 	}
 	
 	// erase traces of fileCaches
@@ -440,15 +446,23 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	[connection retain];
 	[ST_connections removeObjectForKey:connection.subContext];
 	[connection release];
+	
+	// get rid of fileCaches
+	[fileCaches makeObjectsPerformSelector:@selector(release)];
+	[fileCaches release];
 }
 
-- (void)simpleURLConnection:(STSimpleURLConnection *)connection didFailWithError:(NSError *)error
++ (void)simpleURLConnection:(STSimpleURLConnection *)connection didFailWithError:(NSError *)error
 {
+	// retain all the fileCaches, we don't want them to be dealloced before we're done
+	NSSet		*fileCaches		= [connection.context copy];
+	[fileCaches makeObjectsPerformSelector:@selector(retain)];
+	
 	// tell fileCaches its finished
 	for (STFileCache *fileCache in connection.context)
 	{
-		[fileCache failed];
 		[[STNetworkIndicator sharedNetworkIndicator] decrementNetworkUsageForNamespace:fileCache.networkNamespace];
+		[fileCache failed];
 	}
 	
 	// erase traces of fileCaches
@@ -459,6 +473,10 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	[connection retain];
 	[ST_connections removeObjectForKey:connection.subContext];
 	[connection release];
+	
+	// get rid of fileCaches
+	[fileCaches makeObjectsPerformSelector:@selector(release)];
+	[fileCaches release];	
 }
 
 

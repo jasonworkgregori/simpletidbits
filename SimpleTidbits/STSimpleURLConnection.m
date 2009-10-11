@@ -18,7 +18,8 @@
 	if (self = [super init])
 	{
 		URLConnection	= [[NSURLConnection alloc] initWithRequest:request
-														delegate:self];
+														delegate:self
+												startImmediately:NO];
 		if (!URLConnection)
 		{
 			[self release];
@@ -41,6 +42,8 @@
 
 - (void)start
 {
+	[URLConnection scheduleInRunLoop:[NSRunLoop currentRunLoop]
+							 forMode:NSDefaultRunLoopMode];
 	[URLConnection start];
 }
 
