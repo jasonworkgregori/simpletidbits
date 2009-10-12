@@ -1,0 +1,85 @@
+
+
+
+SIMPLETIDBITS
+-------------
+
+simpletidbits is a collection of smallish iPhone frameworks. For installation see the end of this document.
+
+
+
+Current Frameworks
+------------------
+
+### SimpleTidbits ###
+
+SimpleTidbits aims to provide useful, small categories and a few useful classes:
+
+*  STNetworkIndicator - Allows nesting and namespaces for the network indicator in the status bar.
+*  STFileCache - Downloads files and caches them for later use (I don't remember why I didn't just use NSURLConnection, but there must be a good reason :).
+*  STImageView - A UIImageView that can take URLs instead of UIImages and load up the image using STFileCache.
+
+
+
+Planned Frameworks
+------------------
+
+### STAuthKit ###
+
+STAuthKit is a simple framework that allows the developer to require the user to login (or signup) to access certain parts of the app (or even to simply use the app). It also has a class for downloading data that can require authentication for downloading and automatically logout a user on receiving an auto error back from the server.
+
+### STMenuKit ###
+
+The goal of STMenuKit is make it easier on the developer to create menus with UITableViewControllers using plists. However, the ambition is much broader than just that: to be able to use plists to create forms (like in the Settings App), lists (like your contacts in the Contacts App) using an array or Core Data as the backend, and edit screens (like when you edit a contact in the Contacts App) using a dictionary or Core Data as the backend.
+
+### STBrandingKit ###
+
+The goal of STBrandingKit is to allow you to easily brand your app like how the Facebook App does (with the Facebook logo on every navigation bar). I'm not exactly sure how I'm going to do this one, but it will be pretty small.
+
+### STMessagesKit ###
+
+STMessagesKit provides you with a view controller that looks almost exactly like the Messages App (with the bubbles and all). It uses Core Data as a backend.
+
+### STPhotosKit ###
+
+Provides a photo thumbnail viewer and a slider view controller. Slides contain a photo, a headline, and an optional more info view.
+
+
+
+Adding simpletidbits to a Project
+---------------------------------
+
+1.  __Get a Copy of simpletidbits__  
+    [Download](http://github.com/jasongregori/simpletidbits) or use git to clone a copy of simpletidbits from github.  
+    `git clone git://github.com/jasongregori/simpletidbits.git`.
+
+2.  __Add the Framework to Your Project__  
+    Find the framework you need and drag it into your project. Make sure "Copy itemsÉ" is __not__ selected and "Reference Type" is set to "Relative to Project". Do the same for any bundles you might need (they usually contain images).
+
+3.  __Link to the Framework__  
+    Click on the {framework}.xcodeproj in your project sidebar. Under the "Details" tab (View->Details), you will see lib{framework}.a. Check the checkbox on the far right side of lib{framework}.a (the target column). This links the framework to your project for compiling.
+
+4.  __Add the Framework as a Dependency__  
+    Expand the "Targets" group in the sidebar and double-click your application's target. Under the "General" tab you will see a "Direct Dependencies" section. Click the "+" button, select {framework} under {framework}.xcodeproj, and click "Add Target". This makes sure the framework is compiled to the same SDK and Configuration as your project.
+
+5.  __Add a Header Search Path__  
+    Under "Project Settings" (double-click your project file in the sidebar), go to the "Build" tab. Find "Header Search Paths" (you can find more easily by searching). Double-click it. Add the relative path from your project to the simpletidbits directory. This allows Xcode to find the header files for compiling.
+
+6.  __Add a Linker Flag__  
+    In the same place as step 5, find the "Other Linker Flags" row. Add the flag "-ObjC". Without this flag, the compiler will not include the categories in your excecutable. Unfortunately, with this flag also forces the compiler to load all the classes and categories of the library instead of just the ones you use.
+
+7.  __Add Other Frameworks__  
+    The framework that you want to use will have frameworks it needs to work, so you must also add those frameworks into your project.
+
+8.  __To Use in a File__  
+    `#import <{framework}/{framework}.h>`
+
+
+
+Why
+---
+
+The goal of the project is to create small modularized frameworks to provide really useful functionality that are in a ton of apps. I wrote all of this code for use in different projects that I've worked on. Most of the code has already been written (including the planned frameworks), but I need to do a lot of work to separate them out of other projects and clean them up.
+
+Thanks,  
+Jason Gregori
