@@ -54,7 +54,7 @@ Adding simpletidbits to a Project
     `git clone git://github.com/jasongregori/simpletidbits.git`.
 
 2.  __Add the Framework to Your Project__  
-    Find the framework you need and drag it into your project. Make sure "Copy itemsÉ" is __not__ selected and "Reference Type" is set to "Relative to Project". Do the same for any bundles you might need (they usually contain images).
+    Find the framework you need and drag it into your project. Make sure "Copy items..." is __not__ selected and "Reference Type" is set to "Relative to Project". Do the same for any bundles you might need (they usually contain images).
 
 3.  __Link to the Framework__  
     Click on the {framework}.xcodeproj in your project sidebar. Under the "Details" tab (View->Details), you will see lib{framework}.a. Check the checkbox on the far right side of lib{framework}.a (the target column). This links the framework to your project for compiling.
