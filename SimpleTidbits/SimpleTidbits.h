@@ -32,6 +32,8 @@
 #import "NSNumberAdditions.h"
 #import "NSArrayAdditions.h"
 #import "NSDateAdditions.h"
+#import "NSDictionaryAdditions.h"
+#import "NSSetAdditions.h"
 
 
 // Classes

@@ -21,7 +21,8 @@
 	id <STSimpleURLConnectionDelegate> _delegate;
 	id		_context;
 	id		_subContext;
-	NSURLConnection	*URLConnection;
+	NSURLConnection	*_URLConnection;
+    NSURLResponse   *_response;
 	NSMutableData	*_data;
 }
 @property (nonatomic, assign)	id <STSimpleURLConnectionDelegate> delegate;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain)	id		context;
 @property (nonatomic, retain)	id		subContext;
 // The response data
+@property (nonatomic, readonly, retain) NSURLResponse *response;
 @property (nonatomic, readonly)	NSData	*data;
 
 - (id)initWithRequest:(NSURLRequest *)request;

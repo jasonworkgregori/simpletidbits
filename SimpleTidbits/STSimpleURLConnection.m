@@ -8,21 +8,27 @@
 
 #import "STSimpleURLConnection.h"
 
+@interface STSimpleURLConnection ()
+@property (nonatomic, retain) NSURLResponse *response;
+
+@end
+
 
 @implementation STSimpleURLConnection
 @synthesize delegate = _delegate, context = _context, subContext = _subContext,
-			data = _data;
+			data = _data, response = _response;
 
 - (id)initWithRequest:(NSURLRequest *)request
 {
 	if (self = [super init])
 	{
-		URLConnection	= [[NSURLConnection alloc] initWithRequest:request
+		_URLConnection	= [[NSURLConnection alloc] initWithRequest:request
 														delegate:self
 												startImmediately:NO];
-		if (!URLConnection)
+		if (!_URLConnection)
 		{
 			[self release];
+            self    = nil;
 			return nil;
 		}
 		_data			= [[NSMutableData alloc] init];
@@ -32,8 +38,8 @@
 
 - (void)dealloc
 {
-	[URLConnection cancel];
-	[URLConnection release];
+	[_URLConnection cancel];
+	[_URLConnection release];
 	[_data release];
 	[_context release];
 	
@@ -42,9 +48,9 @@
 
 - (void)start
 {
-	[URLConnection scheduleInRunLoop:[NSRunLoop currentRunLoop]
+	[_URLConnection scheduleInRunLoop:[NSRunLoop currentRunLoop]
 							 forMode:NSDefaultRunLoopMode];
-	[URLConnection start];
+	[_URLConnection start];
 }
 
 #pragma mark -
@@ -53,6 +59,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    self.response    = response;
     [_data setLength:0];
 }
 

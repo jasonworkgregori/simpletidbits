@@ -28,6 +28,10 @@
 		79619099107EC3CD000937C1 /* STImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 79619097107EC3CD000937C1 /* STImageView.h */; };
 		7961909A107EC3CD000937C1 /* STImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79619098107EC3CD000937C1 /* STImageView.m */; };
 		7961909F107ECBB5000937C1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7961909E107ECBB5000937C1 /* QuartzCore.framework */; };
+		796665B110856788007992BB /* NSDictionaryAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 796665AF10856788007992BB /* NSDictionaryAdditions.h */; };
+		796665B210856788007992BB /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 796665B010856788007992BB /* NSDictionaryAdditions.m */; };
+		796665B51085705E007992BB /* NSSetAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 796665B31085705E007992BB /* NSSetAdditions.h */; };
+		796665B61085705E007992BB /* NSSetAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 796665B41085705E007992BB /* NSSetAdditions.m */; };
 		7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = 7979A56E1080519F00A31539 /* SimpleTidbits.h */; };
 		79A5DADA106ED8FD00891E58 /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */; };
 		79A5DADB106ED8FD00891E58 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */; };
@@ -63,6 +67,10 @@
 		79619097107EC3CD000937C1 /* STImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STImageView.h; sourceTree = "<group>"; };
 		79619098107EC3CD000937C1 /* STImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STImageView.m; sourceTree = "<group>"; };
 		7961909E107ECBB5000937C1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		796665AF10856788007992BB /* NSDictionaryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryAdditions.h; sourceTree = "<group>"; };
+		796665B010856788007992BB /* NSDictionaryAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryAdditions.m; sourceTree = "<group>"; };
+		796665B31085705E007992BB /* NSSetAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSetAdditions.h; sourceTree = "<group>"; };
+		796665B41085705E007992BB /* NSSetAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSetAdditions.m; sourceTree = "<group>"; };
 		7979A56E1080519F00A31539 /* SimpleTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTidbits.h; sourceTree = "<group>"; };
 		79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
@@ -166,6 +174,10 @@
 				79054702106EE4CD006ECB61 /* NSArrayAdditions.m */,
 				79054707106EE668006ECB61 /* NSDateAdditions.h */,
 				79054708106EE668006ECB61 /* NSDateAdditions.m */,
+				796665AF10856788007992BB /* NSDictionaryAdditions.h */,
+				796665B010856788007992BB /* NSDictionaryAdditions.m */,
+				796665B31085705E007992BB /* NSSetAdditions.h */,
+				796665B41085705E007992BB /* NSSetAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -193,6 +205,8 @@
 				79BF202010730EAE003FBD85 /* STFileCache.h in Headers */,
 				79619099107EC3CD000937C1 /* STImageView.h in Headers */,
 				7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */,
+				796665B110856788007992BB /* NSDictionaryAdditions.h in Headers */,
+				796665B51085705E007992BB /* NSSetAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +267,8 @@
 				79BF1FDD1072E805003FBD85 /* STSimpleURLConnection.m in Sources */,
 				79BF202110730EAE003FBD85 /* STFileCache.m in Sources */,
 				7961909A107EC3CD000937C1 /* STImageView.m in Sources */,
+				796665B210856788007992BB /* NSDictionaryAdditions.m in Sources */,
+				796665B61085705E007992BB /* NSSetAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
