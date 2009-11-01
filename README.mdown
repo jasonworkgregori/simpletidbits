@@ -4,7 +4,7 @@
 SIMPLETIDBITS
 -------------
 
-simpletidbits is a collection of smallish iPhone frameworks. For installation see the end of this document.
+simpletidbits is a collection of smallish iPhone frameworks written for iPhone OS 3.0 or later. For installation, see the end of this document.
 
 
 
@@ -16,8 +16,13 @@ Current Frameworks
 SimpleTidbits aims to provide useful, small categories and a few useful classes:
 
 *  STNetworkIndicator - Allows nesting and namespaces for the network indicator in the status bar.
-*  STFileCache - Downloads files and caches them for later use (I don't remember why I didn't just use NSURLConnection, but there must be a good reason :).
+*  STFileCache - Downloads files and caches them for later use.
 *  STImageView - A UIImageView that can take URLs instead of UIImages and load up the image using STFileCache.
+
+
+### STIBViewKit ###
+
+Allows you to create views in IB that you can use in code or other NIBs.
 
 
 
@@ -51,19 +56,19 @@ Adding simpletidbits to a Project
 
 1.  __Get a Copy of simpletidbits__  
     [Download](http://github.com/jasongregori/simpletidbits) or use git to clone a copy of simpletidbits from github.  
-    `git clone git://github.com/jasongregori/simpletidbits.git`.
+    `git clone git://github.com/jasongregori/simpletidbits.git`
 
 2.  __Add the Framework to Your Project__  
     Find the framework you need and drag it into your project. Make sure "Copy items..." is __not__ selected and "Reference Type" is set to "Relative to Project". Do the same for any bundles you might need (they usually contain images).
 
 3.  __Link to the Framework__  
-    Click on the {framework}.xcodeproj in your project sidebar. Under the "Details" tab (View->Details), you will see lib{framework}.a. Check the checkbox on the far right side of lib{framework}.a (the target column). This links the framework to your project for compiling.
+    Click on the {framework}.xcodeproj in your project sidebar. Under the "Details" tab (View->Details), you will see lib{framework}.a. Check the checkbox on the far right side of lib{framework}.a (the target column). I think this links the framework to your project for preprocessing.
 
 4.  __Add the Framework as a Dependency__  
-    Expand the "Targets" group in the sidebar and double-click your application's target. Under the "General" tab you will see a "Direct Dependencies" section. Click the "+" button, select {framework} under {framework}.xcodeproj, and click "Add Target". This makes sure the framework is compiled to the same SDK and Configuration as your project.
+    Expand the "Targets" group in the sidebar and double-click your application's target. Under the "General" tab you will see a "Direct Dependencies" section. Click the "+" button, select {framework} under {framework}.xcodeproj, and click "Add Target". I think this makes sure the framework is compiled to the same SDK and Configuration as your project (it compiles it if not available and recompiles if there is a change).
 
 5.  __Add a Header Search Path__  
-    Under "Project Settings" (double-click your project file in the sidebar), go to the "Build" tab. Find "Header Search Paths" (you can find more easily by searching). Double-click it. Add the relative path from your project to the simpletidbits directory. This allows Xcode to find the header files for compiling.
+    Under "Project Settings" (double-click your project file in the sidebar), go to the "Build" tab. Find "Header Search Paths" (you can find more easily by searching). Double-click it. Add the relative path from your project to the simpletidbits directory. I think this allows Xcode to find the header files for preprocessing.
 
 6.  __Add a Linker Flag__  
     In the same place as step 5, find the "Other Linker Flags" row. Add the flag "-ObjC". Without this flag, the compiler will not include the categories in your excecutable. Unfortunately, with this flag also forces the compiler to load all the classes and categories of the library instead of just the ones you use.
