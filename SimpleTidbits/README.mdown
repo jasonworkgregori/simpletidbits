@@ -1,0 +1,19 @@
+
+
+SimpleTidbits
+-------------
+
+SimpleTidbits aims to provide useful, small categories and a few useful classes:
+
+*  STNetworkIndicator - Allows nesting and namespaces for the network indicator in the status bar.
+*  STFileCache - Downloads files and caches them for later use (I don't remember why I didn't just use NSURLConnection, but there must be a good reason :).
+*  STImageView - A UIImageView that can take URLs instead of UIImages and load up the image using STFileCache.
+
+
+
+Required Frameworks
+-------------------
+
+*  Foundation
+*  UIKit
+*  QuartzCore
