@@ -12,6 +12,10 @@
 		794146A910968493006370AC /* STIBViewGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 794146A710968493006370AC /* STIBViewGenerator.h */; };
 		794146AA10968493006370AC /* STIBViewGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 794146A810968493006370AC /* STIBViewGenerator.m */; };
 		794147371097D227006370AC /* STIBViewKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 794147361097D227006370AC /* STIBViewKit.h */; };
+		7956C222109E52F600BF92C5 /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7956C220109E52F600BF92C5 /* UIViewAdditions.h */; };
+		7956C223109E52F600BF92C5 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7956C221109E52F600BF92C5 /* UIViewAdditions.m */; };
+		7956C24E109E550C00BF92C5 /* STIBTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7956C24C109E550C00BF92C5 /* STIBTableViewCell.h */; };
+		7956C24F109E550C00BF92C5 /* STIBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7956C24D109E550C00BF92C5 /* STIBTableViewCell.m */; };
 		AA747D9F0F9514B9006C5449 /* STIBViewKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* STIBViewKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -23,6 +27,10 @@
 		794146A810968493006370AC /* STIBViewGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STIBViewGenerator.m; sourceTree = "<group>"; };
 		794146EA1097CE74006370AC /* standard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = standard.xib; sourceTree = "<group>"; };
 		794147361097D227006370AC /* STIBViewKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STIBViewKit.h; sourceTree = "<group>"; };
+		7956C220109E52F600BF92C5 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
+		7956C221109E52F600BF92C5 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
+		7956C24C109E550C00BF92C5 /* STIBTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STIBTableViewCell.h; sourceTree = "<group>"; };
+		7956C24D109E550C00BF92C5 /* STIBTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STIBTableViewCell.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* STIBViewKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STIBViewKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSTIBViewKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTIBViewKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,8 +60,12 @@
 			isa = PBXGroup;
 			children = (
 				794147361097D227006370AC /* STIBViewKit.h */,
+				7956C220109E52F600BF92C5 /* UIViewAdditions.h */,
+				7956C221109E52F600BF92C5 /* UIViewAdditions.m */,
 				794146A310967F55006370AC /* STIBView.h */,
 				794146A410967F55006370AC /* STIBView.m */,
+				7956C24C109E550C00BF92C5 /* STIBTableViewCell.h */,
+				7956C24D109E550C00BF92C5 /* STIBTableViewCell.m */,
 				794146A710968493006370AC /* STIBViewGenerator.h */,
 				794146A810968493006370AC /* STIBViewGenerator.m */,
 				794146E91097CE4B006370AC /* Resources */,
@@ -99,6 +111,8 @@
 				794146A510967F55006370AC /* STIBView.h in Headers */,
 				794146A910968493006370AC /* STIBViewGenerator.h in Headers */,
 				794147371097D227006370AC /* STIBViewKit.h in Headers */,
+				7956C222109E52F600BF92C5 /* UIViewAdditions.h in Headers */,
+				7956C24E109E550C00BF92C5 /* STIBTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +161,8 @@
 			files = (
 				794146A610967F55006370AC /* STIBView.m in Sources */,
 				794146AA10968493006370AC /* STIBViewGenerator.m in Sources */,
+				7956C223109E52F600BF92C5 /* UIViewAdditions.m in Sources */,
+				7956C24F109E550C00BF92C5 /* STIBTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

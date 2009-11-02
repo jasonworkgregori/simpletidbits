@@ -19,6 +19,9 @@ If you use this class you will be able to do the following:
   * alpha
   * tag
   * subviews
+* Create cells in IB and get an instance programmatically.
+* Get a view from a nib without subclassing STIBView by using UIView's
+  category method `ST_IBViewForNibNamed:`.
 
 
 Required Frameworks
@@ -27,8 +30,3 @@ Required Frameworks
 * Foundation
 * UIKit
 
-
-TODO
-----
-
-* STIBTableViewCell

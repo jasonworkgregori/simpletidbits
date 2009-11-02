@@ -8,8 +8,8 @@
 
 #import "STIBView.h"
 
-#import <Foundation/Foundation.h>
-#import "STIBViewGenerator.h"
+#import "UIViewAdditions.h"
+
 
 @interface STIBView ()
 
@@ -56,7 +56,7 @@ static BOOL ST_loadingFromClassNib = NO;
         return self;
     }
     
-    UIView      *newSelf     = [[[self class] instance] retain];
+    UIView      *newSelf     = [[self class] new];
     
     // set it's info to be the properties of the view it is replacing
     newSelf.frame       = self.frame;
@@ -73,12 +73,6 @@ static BOOL ST_loadingFromClassNib = NO;
     return newSelf;
 }
 
-- (void)dealloc
-{
-    
-    [super dealloc];
-}
-
 
 #pragma mark -
 #pragma mark Class Methods
@@ -90,41 +84,13 @@ static BOOL ST_loadingFromClassNib = NO;
     return NSStringFromClass(self);
 }
 
-// Generates an instance of our class
-+ (id)instance
-{
-    return [[[self alloc] init] autorelease];
-}
-
-// Load an STIBView from a nib
-+ (id)IBViewForNibNamed:(NSString *)nibName
-{    
-    STIBViewGenerator   *generator  = [STIBViewGenerator
-                                       sharedSTIBViewGenerator];
-
-    // Load the nib for the STIBView using our shared STIBViewGenerator
-    // as the owner. This will connect the view to the sharedIBViewGenerator's
-    // view outlet
-    [[NSBundle mainBundle] loadNibNamed:nibName
-                                  owner:generator
-                                options:nil];
-    // This is how we get the view from the sharedIBViewGenerator.
-    // Make sure it's retained, then autorelease it.
-    id      view       = [[generator.view retain] autorelease];
-    // Release the view from the sharedIBViewGenerator so it won't wasting
-    // memory after it isn't being used anymore.
-    generator.view  = nil;
-    
-    return view;
-}
-
 #pragma mark Private
 
 + (id)ST_instanceFromNib;
 {
     // we set this so we know we are loading from the class nib
     ST_loadingFromClassNib  = YES;
-    return [STIBView IBViewForNibNamed:[self nibName]];
+    return [STIBView ST_IBViewForNibNamed:[self nibName]];
 }
 
 @end
