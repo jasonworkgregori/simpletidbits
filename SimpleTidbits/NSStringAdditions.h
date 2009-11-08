@@ -11,10 +11,10 @@
 
 @interface NSString (SimpleTidbits)
 
-- (NSString *)ST_stringByURLEncoding;
+- (NSString *)st_stringByURLEncoding;
 
-- (NSNumber *)ST_numberValue;
+- (NSNumber *)st_numberValue;
 
-- (NSString *)ST_stringByMD5Encrypting;
+- (NSString *)st_stringByMD5Encrypting;
 
 @end

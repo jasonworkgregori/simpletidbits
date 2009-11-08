@@ -19,6 +19,6 @@
 // Load a non STIBView view from a nib that is in the form the above
 // instructions (with the generator and all). To load an STIBView subclass you
 // must use `+ instance` or `alloc` + `init`/`initWithFrame`.
-+ (id)ST_IBViewForNibNamed:(NSString *)nibName;
++ (id)st_IBViewForNibNamed:(NSString *)nibName;
 
 @end

@@ -11,6 +11,6 @@
 
 @interface UIImageView (SimpleTidbits)
 
-+ (id)ST_imageViewWithImageNamed:(NSString *)name;
++ (id)st_imageViewWithImageNamed:(NSString *)name;
 
 @end

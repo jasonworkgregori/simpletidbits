@@ -11,9 +11,9 @@
 
 @interface UIFont (SimpleTidbits)
 
-+ (UIFont *)ST_settingsTitleFont;
-+ (UIFont *)ST_settingsDetailFont;
-+ (UIFont *)ST_contactsTitleFont;
-+ (UIFont *)ST_contactsDetailFont;
++ (UIFont *)st_settingsTitleFont;
++ (UIFont *)st_settingsDetailFont;
++ (UIFont *)st_contactsTitleFont;
++ (UIFont *)st_contactsDetailFont;
 
 @end

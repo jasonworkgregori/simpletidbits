@@ -11,70 +11,76 @@
 
 @implementation UIView (SimpleTidbits)
 
-- (CGFloat)ST_left
+- (CGFloat)st_left
 {
 	return self.frame.origin.x;
 }
 
-- (void)setST_left:(CGFloat)x
+- (void)setSt_left:(CGFloat)x
 {
 	CGRect frame = self.frame;
 	frame.origin.x = x;
 	self.frame = frame;
 }
 
-- (CGFloat)ST_top
+- (CGFloat)st_top
 {
 	return self.frame.origin.y;
 }
 
-- (void)setST_top:(CGFloat)y
+- (void)setSt_top:(CGFloat)y
 {
 	CGRect frame = self.frame;
 	frame.origin.y = y;
 	self.frame = frame;
 }
 
-- (CGFloat)ST_right
+- (CGFloat)st_right
 {
 	return self.frame.origin.x + self.frame.size.width;
 }
 
-- (CGFloat)ST_bottom
+- (CGFloat)st_bottom
 {
 	return self.frame.origin.y + self.frame.size.height;
 }
 
-- (CGFloat)ST_width
+// ???: Should this set the top or height?
+- (void)setSt_bottom:(CGFloat)bottom
+{
+    [self setSt_top:(bottom - [self st_height])];
+}
+
+- (CGFloat)st_width
 {
 	return self.frame.size.width;
 }
 
-- (void)setST_width:(CGFloat)width
+- (void)setSt_width:(CGFloat)width
 {
 	CGRect frame = self.frame;
 	frame.size.width = width;
 	self.frame = frame;
 }
 
-- (CGFloat)ST_height
+- (CGFloat)st_height
 {
 	return self.frame.size.height;
 }
 
-- (void)setST_height:(CGFloat)height
+- (void)setSt_height:(CGFloat)height
 {
 	CGRect frame = self.frame;
 	frame.size.height = height;
 	self.frame = frame;
 }
 
-- (CGSize)ST_size
+- (CGSize)st_size
 {
     return self.frame.size;
 }
 
-- (void)setST_size:(CGSize)size
+- (void)setSt_size:(CGSize)size
 {
     CGRect frame = self.frame;
     frame.size = size;

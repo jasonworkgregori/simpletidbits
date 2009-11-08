@@ -11,14 +11,14 @@
 
 @interface UIView (SimpleTidbits)
 
-@property(nonatomic) CGFloat ST_left;
-@property(nonatomic) CGFloat ST_top;
-@property(nonatomic, readonly) CGFloat ST_right;
-@property(nonatomic, readonly) CGFloat ST_bottom;
+@property(nonatomic) CGFloat st_left;
+@property(nonatomic) CGFloat st_top;
+@property(nonatomic, readonly) CGFloat st_right;
+@property(nonatomic, readonly) CGFloat st_bottom;
 
-@property(nonatomic) CGFloat ST_width;
-@property(nonatomic) CGFloat ST_height;
+@property(nonatomic) CGFloat st_width;
+@property(nonatomic) CGFloat st_height;
 
-@property(nonatomic) CGSize	ST_size;
+@property(nonatomic) CGSize	st_size;
 
 @end

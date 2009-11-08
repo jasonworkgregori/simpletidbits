@@ -18,14 +18,14 @@
  Returns a string in the form `key=val1&key=val2...`.
  Asks each value for it's description to make sure it gets a string.
  All values must be NSObjects.
- If an array or set is encountered, ST_URLEncodedFormWithKey is called on it
+ If an array or set is encountered, st_URLEncodedFormWithKey is called on it
  with the same key and tacked onto the string.
- If a dictionary is encountered, the key is ignored and ST_URLEncodedForm is
+ If a dictionary is encountered, the key is ignored and st_URLEncodedForm is
  called on the dictionary and tacked onto the end.
  */
-- (NSString *)ST_URLEncodedFormWithKey:(NSObject *)key
+- (NSString *)st_URLEncodedFormWithKey:(NSObject *)key
 {
-	NSString	*URLEncodedKey	= [[key description] ST_stringByURLEncoding];
+	NSString	*URLEncodedKey	= [[key description] st_stringByURLEncoding];
 	NSMutableString		*form	= [[NSMutableString alloc] init];
 	BOOL		firstItem		= YES;
 	
@@ -40,22 +40,22 @@
 		if ([object isKindOfClass:[NSArray class]]
 			|| [object isKindOfClass:[NSSet class]])
 		{
-			// If an array or set is encountered, ST_URLEncodedFormWithKey is
+			// If an array or set is encountered, st_URLEncodedFormWithKey is
 			// called on it with the same key and tacked onto the string.
-			[form appendString:[object ST_URLEncodedFormWithKey:key]];
+			[form appendString:[object st_URLEncodedFormWithKey:key]];
 		}
 		else if ([object isKindOfClass:[NSDictionary class]])
 		{
 			// If a dictionary is encountered, the key is ignored and
-			// ST_URLEncodedForm is called on the dictionary and tacked on.
-			[form appendString:[object ST_URLEncodedForm]];
+			// st_URLEncodedForm is called on the dictionary and tacked on.
+			[form appendString:[object st_URLEncodedForm]];
 		}
 		else
 		{
 			// Just a regular object
 			[form appendFormat:@"%@=%@",
 			 URLEncodedKey,
-			 [[object description] ST_stringByURLEncoding]];
+			 [[object description] st_stringByURLEncoding]];
 		}
 	}
 	

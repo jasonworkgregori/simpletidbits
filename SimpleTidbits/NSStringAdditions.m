@@ -13,7 +13,7 @@ static NSNumberFormatter *numberFormatter = nil;
 
 @implementation NSString (SimpleTidbits)
 
-- (NSString *)ST_stringByURLEncoding
+- (NSString *)st_stringByURLEncoding
 {
     return [((NSString *)CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                                  (CFStringRef)self,
@@ -23,7 +23,7 @@ static NSNumberFormatter *numberFormatter = nil;
             autorelease];
 }
 
-- (NSNumber *)ST_numberValue
+- (NSNumber *)st_numberValue
 {
     if (!numberFormatter)
     {
@@ -33,7 +33,7 @@ static NSNumberFormatter *numberFormatter = nil;
     return [numberFormatter numberFromString:self];
 }
 
-- (NSString *)ST_stringByMD5Encrypting
+- (NSString *)st_stringByMD5Encrypting
 {
 	// thank you to ANDREW PAUL SIMMONS at http://blog.andrewpaulsimmons.com/2008/07/md5-hash-on-iphone.html
 	const char *cStr = [self UTF8String];

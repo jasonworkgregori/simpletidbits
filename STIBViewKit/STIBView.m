@@ -14,11 +14,11 @@
 @interface STIBView ()
 
 // actually create instance from nib
-+ (id)ST_instanceFromNib;
++ (id)st_instanceFromNib;
 
 @end
 
-static BOOL ST_loadingFromClassNib = NO;
+static BOOL st_loadingFromClassNib = NO;
 
 @implementation STIBView
 
@@ -30,7 +30,7 @@ static BOOL ST_loadingFromClassNib = NO;
 - (id)initWithFrame:(CGRect)frame
 {
     // load up a new instance from nib
-    id      newSelf    = [[[self class] ST_instanceFromNib] retain];
+    id      newSelf    = [[[self class] st_instanceFromNib] retain];
     
     // release this instance, because we are going to make a new one
     [self release];
@@ -50,9 +50,9 @@ static BOOL ST_loadingFromClassNib = NO;
     // If this instance was loaded from a nib that was not our view nib,
     // we need to override and replace it with our guy
 
-    if (ST_loadingFromClassNib)
+    if (st_loadingFromClassNib)
     {
-        ST_loadingFromClassNib  = NO;
+        st_loadingFromClassNib  = NO;
         return self;
     }
     
@@ -86,11 +86,11 @@ static BOOL ST_loadingFromClassNib = NO;
 
 #pragma mark Private
 
-+ (id)ST_instanceFromNib;
++ (id)st_instanceFromNib;
 {
     // we set this so we know we are loading from the class nib
-    ST_loadingFromClassNib  = YES;
-    return [STIBView ST_IBViewForNibNamed:[self nibName]];
+    st_loadingFromClassNib  = YES;
+    return [STIBView st_IBViewForNibNamed:[self nibName]];
 }
 
 @end

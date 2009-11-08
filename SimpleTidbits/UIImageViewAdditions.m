@@ -11,7 +11,7 @@
 
 @implementation UIImageView (SimpleTidbits)
 
-+ (id)ST_imageViewWithImageNamed:(NSString *)name
++ (id)st_imageViewWithImageNamed:(NSString *)name
 {
 	UIImage		*image		= [UIImage imageNamed:name];
 	if (!image)

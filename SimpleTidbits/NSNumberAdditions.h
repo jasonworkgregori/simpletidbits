@@ -13,9 +13,9 @@
 
 // String formatted to localized format (eg 1000 => @"1,000" in US english)
 // Uses NSNumberFormattor with NSNumberFormatterDecimalStyle
-- (NSString *)ST_formattedStringValue;
+- (NSString *)st_formattedStringValue;
 
 // This way we can get an NSNumber from a string OR number without having to check
-- (NSNumber *)ST_numberValue;
+- (NSNumber *)st_numberValue;
 
 @end

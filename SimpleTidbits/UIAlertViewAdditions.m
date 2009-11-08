@@ -11,7 +11,7 @@
 
 @implementation UIAlertView (SimpleTidbits)
 
-+ (id)ST_showAlertViewWithTitle:(NSString *)title
++ (id)st_showAlertViewWithTitle:(NSString *)title
 						message:(NSString *)message
 {
 	id		alert		= [[[self class] alloc] initWithTitle:title

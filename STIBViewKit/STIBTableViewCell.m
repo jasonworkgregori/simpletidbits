@@ -18,7 +18,7 @@
 {
     // load a new instance from a nib
     id      newSelf     = [[[self class]
-                            ST_IBViewForNibNamed:[[self class] nibName]]
+                            st_IBViewForNibNamed:[[self class] nibName]]
                            retain];
     
     // release this instance, because we are going to make a new one

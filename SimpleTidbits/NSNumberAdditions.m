@@ -12,7 +12,7 @@ static NSNumberFormatter *numberFormatter = nil;
 
 @implementation NSNumber (SimpleTidbits)
 
-- (NSString *)ST_formattedStringValue
+- (NSString *)st_formattedStringValue
 {
     if (!numberFormatter)
     {
@@ -22,7 +22,7 @@ static NSNumberFormatter *numberFormatter = nil;
     return [numberFormatter stringFromNumber:self];
 }
 
-- (NSNumber *)ST_numberValue
+- (NSNumber *)st_numberValue
 {
 	return self;
 }

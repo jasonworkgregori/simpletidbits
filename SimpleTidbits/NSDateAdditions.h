@@ -12,7 +12,7 @@
 @interface NSDate (SimpleTidbits)
 
 // Uses NSDateFormattor with ShortStyle and LongStyle respectively (no time).
-- (NSString *)ST_shortStringValue;
-- (NSString *)ST_longStringValue;
+- (NSString *)st_shortStringValue;
+- (NSString *)st_longStringValue;
 
 @end

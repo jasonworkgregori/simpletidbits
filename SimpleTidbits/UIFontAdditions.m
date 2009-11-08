@@ -11,22 +11,22 @@
 
 @implementation UIFont (SimpleTidbits)
 
-+ (UIFont *)ST_settingsTitleFont
++ (UIFont *)st_settingsTitleFont
 {
     return [UIFont boldSystemFontOfSize:17];
 }
 
-+ (UIFont *)ST_settingsDetailFont
++ (UIFont *)st_settingsDetailFont
 {
     return [UIFont systemFontOfSize:17];
 }
 
-+ (UIFont *)ST_contactsTitleFont
++ (UIFont *)st_contactsTitleFont
 {
     return [UIFont boldSystemFontOfSize:15];
 }
 
-+ (UIFont *)ST_contactsDetailFont
++ (UIFont *)st_contactsDetailFont
 {
     return [UIFont boldSystemFontOfSize:17];
 }

@@ -15,11 +15,11 @@
  Returns a string in the form `key=val1&key=val2...`.
  Asks each value for it's description to make sure it gets a string.
  All values must be NSObjects.
- If an array or set is encountered, ST_URLEncodedFormWithKey is called on it
+ If an array or set is encountered, st_URLEncodedFormWithKey is called on it
  with the same key and tacked onto the string.
- If a dictionary is encountered, the key is ignored and ST_URLEncodedForm is
+ If a dictionary is encountered, the key is ignored and st_URLEncodedForm is
  called on the dictionary and tacked onto the end.
  */
-- (NSString *)ST_URLEncodedFormWithKey:(NSObject *)key;
+- (NSString *)st_URLEncodedFormWithKey:(NSObject *)key;
 
 @end

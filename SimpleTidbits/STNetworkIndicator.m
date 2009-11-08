@@ -21,7 +21,7 @@ static STNetworkIndicator *sharedNetworkIndicator = nil;
 
 @interface STNetworkIndicator ()
 
-- (void)ST_resetNetworkIndicatorVisibility;
+- (void)st_resetNetworkIndicatorVisibility;
 
 @end
 
@@ -67,11 +67,11 @@ static STNetworkIndicator *sharedNetworkIndicator = nil;
 	{
 		[_currentNetworkNamespace release];
 		_currentNetworkNamespace	= [networkNamespace copy];
-		[self ST_resetNetworkIndicatorVisibility];
+		[self st_resetNetworkIndicatorVisibility];
 	}
 }
 
-- (void)ST_resetNetworkIndicatorVisibility
+- (void)st_resetNetworkIndicatorVisibility
 {
 	NSUInteger	count;
 	if (self.currentNetworkNamespace)
@@ -108,7 +108,7 @@ static STNetworkIndicator *sharedNetworkIndicator = nil;
 		networkNamespace	= STNetworkIndicatorGeneralNamespace;
 	}
 	[namespaceNetworkUsages addObject:[[networkNamespace copy] autorelease]];
-	[self ST_resetNetworkIndicatorVisibility];
+	[self st_resetNetworkIndicatorVisibility];
 }
 
 - (void)decrementNetworkUsageForNamespace:(NSString *)networkNamespace
@@ -122,7 +122,7 @@ static STNetworkIndicator *sharedNetworkIndicator = nil;
 		[namespaceNetworkUsages removeObject:networkNamespace];
 	}
 	[self checkNetworkUsageForNamespace:networkNamespace];
-	[self ST_resetNetworkIndicatorVisibility];
+	[self st_resetNetworkIndicatorVisibility];
 }
 
 // checks if the network is being used, and if it is not, sends a notification

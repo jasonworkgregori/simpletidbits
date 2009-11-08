@@ -11,10 +11,10 @@
 
 @interface UIColor (SimpleTidbits)
 
-+ ST_settingsTextBlueColor;
-+ ST_contactsTextBlueColor;
-+ ST_mailDateTextBlueColor;
-+ ST_smsBackgroundColor;
-+ ST_buttonTextBlueColor;
++ st_settingsTextBlueColor;
++ st_contactsTextBlueColor;
++ st_mailDateTextBlueColor;
++ st_smsBackgroundColor;
++ st_buttonTextBlueColor;
 
 @end

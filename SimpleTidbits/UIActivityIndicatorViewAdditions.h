@@ -11,6 +11,6 @@
 
 @interface UIActivityIndicatorView (SimpleTidbits)
 
-+ (id)ST_activityIndicatorWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style;
++ (id)st_activityIndicatorWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style;
 
 @end

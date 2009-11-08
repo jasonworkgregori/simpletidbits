@@ -11,7 +11,7 @@
 
 @implementation UIActivityIndicatorView (SimpleTidbits)
 
-+ (id)ST_activityIndicatorWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style
++ (id)st_activityIndicatorWithActivityIndicatorStyle:(UIActivityIndicatorViewStyle)style
 {
     id		aiv		= [[self alloc] initWithActivityIndicatorStyle:style];
     [aiv startAnimating];

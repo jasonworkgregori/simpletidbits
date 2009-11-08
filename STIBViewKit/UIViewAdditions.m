@@ -13,7 +13,7 @@
 @implementation UIView (STIBViewKit)
 
 // Load a UIView from a nib
-+ (id)ST_IBViewForNibNamed:(NSString *)nibName
++ (id)st_IBViewForNibNamed:(NSString *)nibName
 {    
     STIBViewGenerator   *generator  = [STIBViewGenerator
                                        sharedSTIBViewGenerator];

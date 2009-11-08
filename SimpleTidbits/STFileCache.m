@@ -12,14 +12,14 @@
 #define kSTFileCacheTimeoutInterval			10
 #define kSTFileCacheFolderName				@"STFramework File Cache"
 
-static NSString				*ST_cacheFolderPath		= nil;
-static NSInteger			ST_numberOfDaysToKeepFiles	= 7;
+static NSString				*st_cacheFolderPath		= nil;
+static NSInteger			st_numberOfDaysToKeepFiles	= 7;
 
 // connections being downloaded: key = path, object = connection
-static NSMutableDictionary	*ST_connections			= nil;
+static NSMutableDictionary	*st_connections			= nil;
 
-static NSMutableSet			*ST_filesDownloaded		= nil;
-static NSMutableSet			*ST_filesToSave			= nil;
+static NSMutableSet			*st_filesDownloaded		= nil;
+static NSMutableSet			*st_filesToSave			= nil;
 
 
 @interface STFileCache ()
@@ -74,19 +74,19 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	NSNumber	*newLimit	= [[[NSBundle mainBundle] infoDictionary] valueForKey:@"STFileCacheDaysToKeepFiles"];
 	if (newLimit)
 	{
-		ST_numberOfDaysToKeepFiles	= [newLimit integerValue];
+		st_numberOfDaysToKeepFiles	= [newLimit integerValue];
 	}
 	
 	// get cache folder
 	NSArray			*paths		= NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-	ST_cacheFolderPath	= [[[paths objectAtIndex:0] stringByAppendingPathComponent:kSTFileCacheFolderName] retain];
+	st_cacheFolderPath	= [[[paths objectAtIndex:0] stringByAppendingPathComponent:kSTFileCacheFolderName] retain];
 	
 	// check if exists
-	if (![[NSFileManager defaultManager] fileExistsAtPath:ST_cacheFolderPath])
+	if (![[NSFileManager defaultManager] fileExistsAtPath:st_cacheFolderPath])
 	{
 		// if not, create it
 		NSError		*error		= nil;
-		if (![[NSFileManager defaultManager] createDirectoryAtPath:ST_cacheFolderPath
+		if (![[NSFileManager defaultManager] createDirectoryAtPath:st_cacheFolderPath
 									   withIntermediateDirectories:YES
 														attributes:nil
 															 error:&error])
@@ -98,7 +98,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	
 	// find all the files that are currently in the cache
 	NSError		*error		= nil;
-	NSArray		*fileNames	= [[NSFileManager defaultManager] contentsOfDirectoryAtPath:ST_cacheFolderPath
+	NSArray		*fileNames	= [[NSFileManager defaultManager] contentsOfDirectoryAtPath:st_cacheFolderPath
 																		   error:&error];
 	if (!fileNames)
 	{
@@ -107,17 +107,17 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	}
 	
 	// add them to a running list
-	ST_filesDownloaded	= [[NSMutableSet alloc] initWithCapacity:[fileNames count]];
+	st_filesDownloaded	= [[NSMutableSet alloc] initWithCapacity:[fileNames count]];
 	for (NSString *fileName in fileNames)
 	{
-		[ST_filesDownloaded addObject:[ST_cacheFolderPath stringByAppendingPathComponent:fileName]];
+		[st_filesDownloaded addObject:[st_cacheFolderPath stringByAppendingPathComponent:fileName]];
 	}
 	
-	// create ST_filesToSave
-	ST_filesToSave		= [[NSMutableSet alloc] init];
+	// create st_filesToSave
+	st_filesToSave		= [[NSMutableSet alloc] init];
 	
-	// create ST_connections
-	ST_connections		= [[NSMutableDictionary alloc] init];
+	// create st_connections
+	st_connections		= [[NSMutableDictionary alloc] init];
 	
 	// we need to be notified of application quiting
 	[[NSNotificationCenter defaultCenter] addObserver:self
@@ -128,7 +128,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 
 + (void)finalize
 {
-	if (!ST_cacheFolderPath)
+	if (!st_cacheFolderPath)
 	{
 		// must have already finalized
 		return;
@@ -137,14 +137,14 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	// delete all the files that haven't been used recently
 	
 	// get only files that haven't been touched
-	[ST_filesDownloaded minusSet:ST_filesToSave];
+	[st_filesDownloaded minusSet:st_filesToSave];
 	
 	// get current date to see how old files are
 	// (we want to save files that weren't used but aren't that old)
 	NSDate		*currentDate		= [[NSDate alloc] init];
 	
 	// delete anything that wasn't used during this run AND is older than out limit
-	for (NSString *filePath in ST_filesDownloaded)
+	for (NSString *filePath in st_filesDownloaded)
 	{
 		// check if it is older than our limit
 		NSError		*error		= nil;
@@ -157,7 +157,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 			NSLog(@"STFileCache Finalizing Error: Could not get the attributes of the file at path \"%@\".", filePath);
 		}
 		else if ([currentDate timeIntervalSinceDate:fileLastModifiedDate]
-				  > 60*60*24*ST_numberOfDaysToKeepFiles)
+				  > 60*60*24*st_numberOfDaysToKeepFiles)
 		{
 			// if the file is older than our limit, delete it
 			[[NSFileManager defaultManager] removeItemAtPath:filePath
@@ -172,17 +172,17 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	[currentDate release];
 	
 	// release global variables
-	[ST_connections release];
-	ST_connections		= nil;
+	[st_connections release];
+	st_connections		= nil;
 	
-	[ST_filesDownloaded release];
-	ST_filesDownloaded	= nil;
+	[st_filesDownloaded release];
+	st_filesDownloaded	= nil;
 	
-	[ST_filesToSave release];
-	ST_filesToSave		= nil;
+	[st_filesToSave release];
+	st_filesToSave		= nil;
 	
-	[ST_cacheFolderPath release];
-	ST_cacheFolderPath	= nil;
+	[st_cacheFolderPath release];
+	st_cacheFolderPath	= nil;
 	
 	// stop getting notifications
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -241,7 +241,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 
 - (BOOL)downloaded
 {
-	return [ST_filesDownloaded containsObject:self.path];
+	return [st_filesDownloaded containsObject:self.path];
 }
 
 - (void)failed
@@ -277,13 +277,13 @@ static NSMutableSet			*ST_filesToSave			= nil;
 + (void)startDownloadFor:(STFileCache *)fileCache
 {
 	// check if file was already downloaded
-	if ([ST_filesDownloaded containsObject:fileCache.path])
+	if ([st_filesDownloaded containsObject:fileCache.path])
 	{
 		// it is already downloaded
 		// add it to the save list, if not already there
-		if (![ST_filesToSave containsObject:fileCache.path])
+		if (![st_filesToSave containsObject:fileCache.path])
 		{
-			[ST_filesToSave addObject:fileCache.path];
+			[st_filesToSave addObject:fileCache.path];
 			
 			// mark the modification date of the file so we know the last
 			// time it was used
@@ -303,7 +303,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	[[STNetworkIndicator sharedNetworkIndicator] incrementNetworkUsageForNamespace:fileCache.networkNamespace];
 	
 	// check if the file is already being downloaded
-	STSimpleURLConnection	*connection		= [ST_connections objectForKey:fileCache.path];
+	STSimpleURLConnection	*connection		= [st_connections objectForKey:fileCache.path];
 	if (connection)
 	{
 		// the file is already being downloaded
@@ -317,7 +317,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	// else, start a new download
 	
 	// add to save files
-	[ST_filesToSave addObject:fileCache.path];
+	[st_filesToSave addObject:fileCache.path];
 	
 	// create request
 	NSURLRequest	*request		= [[NSURLRequest alloc] initWithURL:fileCache.url
@@ -347,7 +347,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	connection.context	= waitList;
 	[waitList release];
 	
-	[ST_connections setValue:connection forKey:fileCache.path];
+	[st_connections setValue:connection forKey:fileCache.path];
 	
 	[connection start];
 	[connection release];
@@ -362,7 +362,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 + (void)endDownloadFor:(STFileCache *)fileCache
 {
 	// check if it is still downloading
-	STSimpleURLConnection	*connection		= [ST_connections valueForKey:fileCache.path];
+	STSimpleURLConnection	*connection		= [st_connections valueForKey:fileCache.path];
 	if (!connection)
 	{
 		// no longer being used
@@ -382,7 +382,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 		if (!fileCache.continueDownloadEvenIfTerminated)
 		{
 			// stop connection
-			[ST_connections removeObjectForKey:fileCache.path];
+			[st_connections removeObjectForKey:fileCache.path];
 		}
 	}
 	
@@ -393,7 +393,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 
 + (NSString *)pathForURL:(NSURL *)url
 {
-	NSString		*path		= [ST_cacheFolderPath stringByAppendingPathComponent:
+	NSString		*path		= [st_cacheFolderPath stringByAppendingPathComponent:
 								   [[NSNumber numberWithUnsignedInteger:
 									 [[url absoluteString] hash]]
 									stringValue]];
@@ -425,7 +425,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 										  attributes:nil];
 	
 	// mark downloaded
-	[ST_filesDownloaded addObject:connection.subContext];
+	[st_filesDownloaded addObject:connection.subContext];
 	
 	// retain all the fileCaches, we don't want them to be dealloced before we're done
 	NSSet		*fileCaches		= [connection.context copy];
@@ -444,7 +444,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	// delete connection
 	// be careful for releasing subContext while removing
 	[connection retain];
-	[ST_connections removeObjectForKey:connection.subContext];
+	[st_connections removeObjectForKey:connection.subContext];
 	[connection release];
 	
 	// get rid of fileCaches
@@ -471,7 +471,7 @@ static NSMutableSet			*ST_filesToSave			= nil;
 	// delete connection
 	// be careful for releasing subContext while removing
 	[connection retain];
-	[ST_connections removeObjectForKey:connection.subContext];
+	[st_connections removeObjectForKey:connection.subContext];
 	[connection release];
 	
 	// get rid of fileCaches

@@ -13,7 +13,7 @@ static NSDateFormatter *longDateFormatter = nil;
 
 @implementation NSDate (SimpleTidbits)
 
-- (NSString *)ST_shortStringValue
+- (NSString *)st_shortStringValue
 {
 	if (!shortDateFormatter)
 	{
@@ -24,7 +24,7 @@ static NSDateFormatter *longDateFormatter = nil;
 	return [shortDateFormatter stringFromDate:self];
 }
 
-- (NSString *)ST_longStringValue
+- (NSString *)st_longStringValue
 {
 	if (!longDateFormatter)
 	{
