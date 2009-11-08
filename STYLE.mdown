@@ -22,9 +22,7 @@ Spacing
 *   Use spaces instead of tabs
 *   One tab is 4 spaces
 *   Never go past 80 characters on one line
-*   Use tabs to separate things on the same line. This is so code becomes kind of columnized and easier to sort quickly through.  
-    I find this makes code much easier to read.  
-    For example:
+*   Use tabs to separate things on the same line. This is so code becomes kind of columnized and easier to sort quickly through. I find this makes code much easier to read. For example:
 
         NSString     *string     = @"string";
         BOOL         myBool      = NO;
@@ -41,5 +39,5 @@ Classes
 
 *   All class member variables should start with a leading underscore.
 *   Use @protected for variables that should be accessible to subclasses.
-*   Create public and private properties to access member variables where applicable. Do not access member variables directly except for in your init, dealloc, getter, and setter.
+*   Create public and private properties to access member variables where applicable. Do not access member variables directly except for in your `init`, `dealloc`, `getter`, and `setter`.
 *   Private methods that must be put in the public implementation (maybe for subclasses to override) should start with the prefix 'st_'. This tells other classes this is a private method and should not be called.
