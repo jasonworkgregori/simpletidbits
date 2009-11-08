@@ -1,11 +1,11 @@
 
 
-
-SIMPLETIDBITS
--------------
+simpletidbits
+=============
 
 simpletidbits is a collection of smallish iPhone frameworks written for iPhone OS 3.0 or later. For installation, see the end of this document.
 
+#### NB: simpletidbits is definitely in alpha and is very subject to change! ####
 
 
 Current Frameworks
