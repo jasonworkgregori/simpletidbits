@@ -174,3 +174,14 @@
 }
 
 @end
+
+@implementation NSObject (STMenuMakerAdditions)
+
+// STMenuMaker calls this method on instances before setting properties.
+// Use this to clear out any properties that might have been set earlier.
+- (void)st_prepareForReuse
+{
+    // default: do nothing
+}
+
+@end

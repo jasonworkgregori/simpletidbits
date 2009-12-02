@@ -55,20 +55,19 @@
 
 - (void)didSelectRow:(NSUInteger)row
 {
-    NSDictionary    *rowData    = [self cellDataForRow:row];
-    NSDictionary    *menu       = [rowData valueForKey:@"menu"];
+    NSDictionary    *menu       = [self menuDataForRow:row];
     if (menu)
     {
         // if there is a menu, push it!
-        NSString    *key        = [rowData valueForKey:@"key"];
+        NSString    *key        = [self keyForRow:row];
 
         // get menu
         UIViewController <STMenuProtocol>   *subMenu
           = [self.menu st_getMenuFromData:menu forKey:key];
         // set value
-        subMenu.value   = [self.menu.value valueForKey:key];
+        subMenu.value   = [self valueForRow:row];
         // set title
-        subMenu.title   = [rowData valueForKey:@"title"];
+        subMenu.title   = [self titleForRow:row];
         
         // push it
         [self.menu st_pushMenu:subMenu forSection:self.section];
@@ -121,6 +120,11 @@
 }
 
 - (NSString *)keyForRow:(NSUInteger)row
+{
+    return nil;
+}
+
+- (id)menuDataForRow:(NSUInteger)row
 {
     return nil;
 }

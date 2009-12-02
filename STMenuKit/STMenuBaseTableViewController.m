@@ -26,6 +26,11 @@
             st_subMenu = _subMenu, st_cachedMenus = _cachedMenus;
 
 
+// create an instance of a menu
++ (id)menu
+{
+    return [[[self alloc] init] autorelease];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

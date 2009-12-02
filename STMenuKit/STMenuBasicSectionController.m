@@ -71,11 +71,7 @@
         {
             // stop observing old value
             [self.values removeObserver:self forKeyPath:key];
-            // start observing new value
-            [newValue addObserver:self
-                       forKeyPath:key
-                          options:0
-                          context:NULL];
+            
             // set default values
             id      defaultValue    = [[self.rows objectAtIndex:i]
                                        valueForKey:@"defaultValue"];
@@ -84,6 +80,13 @@
                 [newValue setValue:defaultValue
                             forKey:key];
             }
+            
+            // start observing new value
+            [newValue addObserver:self
+                       forKeyPath:key
+                          options:0
+                          context:NULL];
+            
             [encounteredKeys addObject:key];
         }
     }
@@ -147,8 +150,12 @@
     return [self.rows count];
 }
 
-// cell editing
-- (BOOL)canEditRow:(NSUInteger)row
+- (UITableViewCellEditingStyle)editingStyleForRow:(NSUInteger)row
+{
+    return UITableViewCellEditingStyleNone;
+}
+
+- (BOOL)shouldIndentWhileEditingRow:(NSUInteger)row
 {
     return NO;
 }
@@ -172,6 +179,11 @@
 - (NSString *)keyForRow:(NSUInteger)row
 {
     return [[self.rows objectAtIndex:row] valueForKey:@"key"];
+}
+
+- (id)menuDataForRow:(NSUInteger)row
+{
+    return [[self.rows objectAtIndex:row] valueForKey:@"menu"];
 }
 
 @end

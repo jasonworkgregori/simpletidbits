@@ -41,10 +41,11 @@
 
 // Cells
 - (NSInteger)numberOfRows;
-- (void)didSelectRow:(NSUInteger)row;
 
-// The next two methods will use the subclass methods to figure these out.
+// The next three methods will use the subclass methods to figure these out.
 // Override the subclass methods OR these OR both.
+// didSelect uses menu, key, value, and title 
+- (void)didSelectRow:(NSUInteger)row;
 // height uses class, title, and value
 - (CGFloat)heightForRow:(NSUInteger)row;
 // cell uses title, value, key, and row data
@@ -64,5 +65,6 @@
 - (id)valueForRow:(NSUInteger)row;
 - (id)cellDataForRow:(NSUInteger)row;
 - (NSString *)keyForRow:(NSUInteger)row;
+- (id)menuDataForRow:(NSUInteger)row;
 
 @end

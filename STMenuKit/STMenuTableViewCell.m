@@ -85,15 +85,14 @@ static NSMutableDictionary *st_classForCellClassName = nil;
         return defaultClass;
     }
     
-    Class   class   = [[st_classForCellClassName valueForKey:className]
-                       pointerValue];
+    Class   class   = [st_classForCellClassName valueForKey:className];
     if (class != NULL)
     {
         return class;
     }
     
     class   = [STMenuMaker classFromClassName:className
-                                   withPrefix:@"ST"
+                                   withPrefix:@"STMenu"
                                        suffix:@"TableViewCell"];
     if (class == NULL)
     {
@@ -111,8 +110,7 @@ static NSMutableDictionary *st_classForCellClassName = nil;
                     format:@"Could not find class for class name:\n%@",
          className];            
     }
-    [st_classForCellClassName setValue:[NSValue valueWithPointer:class]
-                                forKey:className];
+    [st_classForCellClassName setValue:class forKey:className];
     return class;
 }
 

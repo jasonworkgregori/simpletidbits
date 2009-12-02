@@ -69,6 +69,7 @@
                                                    st_defaultSectionClass]];
             section.menu    = self;
             section.section = i;
+            [sections addObject:section];
         }
         _sections   = sections;
     }
@@ -103,7 +104,7 @@
 {
     [super setPlist:plist];
     self.st_sections    = nil;
-    [super setValue:value];
+    [self setValue:value];
     [self.tableView reloadData];
 }
 

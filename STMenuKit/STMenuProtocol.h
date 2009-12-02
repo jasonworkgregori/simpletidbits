@@ -25,6 +25,9 @@
 
 - (void)setPlist:(id)plist andValue:(id)value;
 
+// create an instance of a menu
++ (id)menu;
+
 #pragma mark For Subclass Use Only
 
 // This is called when a menu is reused. Reset all editable properties

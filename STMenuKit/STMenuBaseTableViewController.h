@@ -29,8 +29,6 @@
     NSMutableDictionary     *_cachedMenus;
 }
 
-
-
 #pragma mark For Subclass or Private Use Only
 
 // use this to know when schema was changed
