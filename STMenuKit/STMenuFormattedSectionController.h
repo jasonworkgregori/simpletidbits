@@ -18,33 +18,51 @@
  It may use it's menu property to observe values, push menus, or whatever.
  
  It is the section controller's job to observe value changes (using KVO) to
- update it's cells.
+ update it's cells and it's submenus.
+ 
+ Use menu to create cells.
  */
 
 @interface STMenuFormattedSectionController : NSObject
 {
     STMenuFormattedTableViewController  *_menu;
     NSUInteger      _section;
-    NSDictionary    *_sectionData;
+    NSString        *_title;
 }
 @property (nonatomic, assign)   STMenuFormattedTableViewController  *menu;
 @property (nonatomic, assign)   NSUInteger      section;
-@property (nonatomic, retain)   NSDictionary    *sectionData;
+@property (nonatomic, copy)     NSString        *title;
 
-// cells
-- (STMenuTableViewCell *)tableView:(UITableView *)tableView
-                        cellForRow:(NSUInteger)row;
+// Menu
+// Called when menu's value property has changed.
+- (void)menuValueDidChange:(id)newValue;
+// Menu calls this when subMenu returns
+- (void)saveValue:(id)value forSubMenuKey:(NSString *)key;
+
+// Cells
 - (NSInteger)numberOfRows;
-- (CGFloat)heightForRow:(NSUInteger)row;
+- (void)didSelectRow:(NSUInteger)row;
 
-// editing
+// The next two methods will use the subclass methods to figure these out.
+// Override the subclass methods OR these OR both.
+// height uses class, title, and value
+- (CGFloat)heightForRow:(NSUInteger)row;
+// cell uses title, value, key, and row data
+- (STMenuTableViewCell *)cellForRow:(NSUInteger)row;
+
+// Cell editing
 - (BOOL)shouldIndentWhileEditingRow:(NSUInteger)row;
 - (void)commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                     forRow:(NSUInteger)row;
 - (BOOL)canEditRow:(NSUInteger)row;
 - (UITableViewCellEditingStyle)editingStyleForRow:(NSUInteger)row;
 
-// submenus
-- (void)saveValue:(id)value forSubMenuKey:(NSString *)key;
+// Subclass these! OR height and cellForRow methods OR both
+// default: will get class from row data
+- (Class)classForRow:(NSUInteger)row;
+- (NSString *)titleForRow:(NSUInteger)row;
+- (id)valueForRow:(NSUInteger)row;
+- (id)cellDataForRow:(NSUInteger)row;
+- (NSString *)keyForRow:(NSUInteger)row;
 
 @end

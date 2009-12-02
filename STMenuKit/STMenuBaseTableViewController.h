@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "STMenuProtocol.h"
 
+@class STMenuTableViewCell;
 
 @interface STMenuBaseTableViewController : UITableViewController
 <STMenuProtocol>
@@ -38,6 +39,19 @@
 @property (nonatomic, copy)   id        st_schema;
 @property (nonatomic, readonly, retain) UIViewController <STMenuProtocol>
                                         *st_subMenu;
+
+// default cell class
+- (Class)st_defaultCellClass;
+
+// Gets a cell from the table view or creates one.
+// Cell is a STMenuMaker Item.
+// Sets menu property and key property.
+// Does not set cell properties if key is the same as dequeued cell.
+// reuse id is className.
+- (STMenuTableViewCell *)st_cellWithCellData:(id)data
+                                         key:(NSString *)key;
+// This is called whenever a cell is created. Default does nothing.
+- (void)st_initializeCell:(STMenuTableViewCell *)cell;
 
 // Use this to push a subMenu. It will set self.st_subMenu to this. It will set
 // parentMenuShouldSave to NO on the submenu.

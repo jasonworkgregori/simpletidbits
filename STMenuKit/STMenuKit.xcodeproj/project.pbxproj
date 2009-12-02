@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79312D3910BA029B00479D69 /* STMenuFormTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79312D3710BA029B00479D69 /* STMenuFormTableViewController.h */; };
-		79312D3A10BA029B00479D69 /* STMenuFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79312D3810BA029B00479D69 /* STMenuFormTableViewController.m */; };
+		79312D3910BA029B00479D69 /* STMenuBasicTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79312D3710BA029B00479D69 /* STMenuBasicTableViewController.h */; };
+		79312D3A10BA029B00479D69 /* STMenuBasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79312D3810BA029B00479D69 /* STMenuBasicTableViewController.m */; };
+		79312D6A10BA400C00479D69 /* STMenuBasicSectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79312D6810BA400C00479D69 /* STMenuBasicSectionController.h */; };
+		79312D6B10BA400C00479D69 /* STMenuBasicSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79312D6910BA400C00479D69 /* STMenuBasicSectionController.m */; };
+		795902F610C610E300DB0F5F /* STMenuEditTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 795902F410C610E300DB0F5F /* STMenuEditTableViewCell.h */; };
+		795902F710C610E300DB0F5F /* STMenuEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 795902F510C610E300DB0F5F /* STMenuEditTableViewCell.m */; };
+		7959030210C614CA00DB0F5F /* STMenuEditTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7959030010C614CA00DB0F5F /* STMenuEditTableViewController.h */; };
+		7959030310C614CA00DB0F5F /* STMenuEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7959030110C614CA00DB0F5F /* STMenuEditTableViewController.m */; };
+		7959039910C61AA200DB0F5F /* STMenuKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7959039810C61AA200DB0F5F /* STMenuKit.h */; };
 		79818EA110B0DD0D00B32881 /* STMenuMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 79818E9F10B0DD0D00B32881 /* STMenuMaker.h */; };
 		79818EA210B0DD0D00B32881 /* STMenuMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 79818EA010B0DD0D00B32881 /* STMenuMaker.m */; };
 		79B303EE10A7463C00CE423D /* STMenuProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B303EC10A7463C00CE423D /* STMenuProtocol.h */; };
@@ -26,8 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		79312D3710BA029B00479D69 /* STMenuFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuFormTableViewController.h; sourceTree = "<group>"; };
-		79312D3810BA029B00479D69 /* STMenuFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuFormTableViewController.m; sourceTree = "<group>"; };
+		79312D3710BA029B00479D69 /* STMenuBasicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuBasicTableViewController.h; sourceTree = "<group>"; };
+		79312D3810BA029B00479D69 /* STMenuBasicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuBasicTableViewController.m; sourceTree = "<group>"; };
+		79312D6810BA400C00479D69 /* STMenuBasicSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuBasicSectionController.h; sourceTree = "<group>"; };
+		79312D6910BA400C00479D69 /* STMenuBasicSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuBasicSectionController.m; sourceTree = "<group>"; };
+		795902F410C610E300DB0F5F /* STMenuEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuEditTableViewCell.h; sourceTree = "<group>"; };
+		795902F510C610E300DB0F5F /* STMenuEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuEditTableViewCell.m; sourceTree = "<group>"; };
+		7959030010C614CA00DB0F5F /* STMenuEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuEditTableViewController.h; sourceTree = "<group>"; };
+		7959030110C614CA00DB0F5F /* STMenuEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuEditTableViewController.m; sourceTree = "<group>"; };
+		7959039810C61AA200DB0F5F /* STMenuKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuKit.h; sourceTree = "<group>"; };
 		79818E9F10B0DD0D00B32881 /* STMenuMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuMaker.h; sourceTree = "<group>"; };
 		79818EA010B0DD0D00B32881 /* STMenuMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuMaker.m; sourceTree = "<group>"; };
 		79B303EC10A7463C00CE423D /* STMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuProtocol.h; sourceTree = "<group>"; };
@@ -69,11 +83,12 @@
 		0867D691FE84028FC02AAC07 /* STMenuKit */ = {
 			isa = PBXGroup;
 			children = (
-				08FB77AEFE84172EC02AAC07 /* Classes */,
+				7959039810C61AA200DB0F5F /* STMenuKit.h */,
+				08FB77AEFE84172EC02AAC07 /* Basics */,
+				7959030910C615E900DB0F5F /* Edit Menu */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				79B304A710A7A6BB00CE423D /* UIKit.framework */,
 			);
 			name = STMenuKit;
 			sourceTree = "<group>";
@@ -82,28 +97,31 @@
 			isa = PBXGroup;
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				79B304A710A7A6BB00CE423D /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+		08FB77AEFE84172EC02AAC07 /* Basics */ = {
 			isa = PBXGroup;
 			children = (
 				79B303EC10A7463C00CE423D /* STMenuProtocol.h */,
-				79D1798810B8AD73008A5B54 /* STMenuTableViewCell.h */,
-				79D1798910B8AD73008A5B54 /* STMenuTableViewCell.m */,
 				79818E9F10B0DD0D00B32881 /* STMenuMaker.h */,
 				79818EA010B0DD0D00B32881 /* STMenuMaker.m */,
+				79D1798810B8AD73008A5B54 /* STMenuTableViewCell.h */,
+				79D1798910B8AD73008A5B54 /* STMenuTableViewCell.m */,
 				79EABFC110AD1DFE004DF974 /* STMenuBaseTableViewController.h */,
 				79EABFC210AD1DFE004DF974 /* STMenuBaseTableViewController.m */,
-				79EABFD410AD2272004DF974 /* STMenuFormattedTableViewController.h */,
-				79EABFD510AD2272004DF974 /* STMenuFormattedTableViewController.m */,
 				79D1799210B8B2A8008A5B54 /* STMenuFormattedSectionController.h */,
 				79D1799310B8B2A8008A5B54 /* STMenuFormattedSectionController.m */,
-				79312D3710BA029B00479D69 /* STMenuFormTableViewController.h */,
-				79312D3810BA029B00479D69 /* STMenuFormTableViewController.m */,
+				79EABFD410AD2272004DF974 /* STMenuFormattedTableViewController.h */,
+				79EABFD510AD2272004DF974 /* STMenuFormattedTableViewController.m */,
+				79312D6810BA400C00479D69 /* STMenuBasicSectionController.h */,
+				79312D6910BA400C00479D69 /* STMenuBasicSectionController.m */,
+				79312D3710BA029B00479D69 /* STMenuBasicTableViewController.h */,
+				79312D3810BA029B00479D69 /* STMenuBasicTableViewController.m */,
 			);
-			name = Classes;
+			name = Basics;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -112,6 +130,17 @@
 				AA747D9E0F9514B9006C5449 /* STMenuKit_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		7959030910C615E900DB0F5F /* Edit Menu */ = {
+			isa = PBXGroup;
+			children = (
+				795902F410C610E300DB0F5F /* STMenuEditTableViewCell.h */,
+				795902F510C610E300DB0F5F /* STMenuEditTableViewCell.m */,
+				7959030010C614CA00DB0F5F /* STMenuEditTableViewController.h */,
+				7959030110C614CA00DB0F5F /* STMenuEditTableViewController.m */,
+			);
+			name = "Edit Menu";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +157,11 @@
 				79818EA110B0DD0D00B32881 /* STMenuMaker.h in Headers */,
 				79D1798A10B8AD73008A5B54 /* STMenuTableViewCell.h in Headers */,
 				79D1799410B8B2A8008A5B54 /* STMenuFormattedSectionController.h in Headers */,
-				79312D3910BA029B00479D69 /* STMenuFormTableViewController.h in Headers */,
+				79312D3910BA029B00479D69 /* STMenuBasicTableViewController.h in Headers */,
+				79312D6A10BA400C00479D69 /* STMenuBasicSectionController.h in Headers */,
+				795902F610C610E300DB0F5F /* STMenuEditTableViewCell.h in Headers */,
+				7959030210C614CA00DB0F5F /* STMenuEditTableViewController.h in Headers */,
+				7959039910C61AA200DB0F5F /* STMenuKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +213,10 @@
 				79818EA210B0DD0D00B32881 /* STMenuMaker.m in Sources */,
 				79D1798B10B8AD73008A5B54 /* STMenuTableViewCell.m in Sources */,
 				79D1799510B8B2A8008A5B54 /* STMenuFormattedSectionController.m in Sources */,
-				79312D3A10BA029B00479D69 /* STMenuFormTableViewController.m in Sources */,
+				79312D3A10BA029B00479D69 /* STMenuBasicTableViewController.m in Sources */,
+				79312D6B10BA400C00479D69 /* STMenuBasicSectionController.m in Sources */,
+				795902F710C610E300DB0F5F /* STMenuEditTableViewCell.m in Sources */,
+				7959030310C614CA00DB0F5F /* STMenuEditTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

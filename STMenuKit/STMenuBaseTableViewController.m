@@ -8,6 +8,7 @@
 
 #import "STMenuBaseTableViewController.h"
 #import "STMenuMaker.h"
+#import "STMenuTableViewCell.h"
 
 @interface STMenuBaseTableViewController ()
 
@@ -45,6 +46,52 @@
     [_cachedMenus release];
     
     [super dealloc];
+}
+
+- (Class)st_defaultCellClass
+{
+    return NULL;
+}
+
+- (STMenuTableViewCell *)st_cellWithCellData:(id)data
+                                         key:(NSString *)key
+{
+    NSString    *className  = [STMenuMaker classNameForData:data];
+    
+    // see if there is already one
+    STMenuTableViewCell *cell
+    = (id)[self.tableView dequeueReusableCellWithIdentifier:className];
+    
+    if (!cell)
+    {
+        // create a cell
+        cell    = [[[[STMenuTableViewCell
+                      classForCellClassName:className
+                      defaultClass:[self st_defaultCellClass]]
+                     alloc]
+                    initWithStyle:UITableViewCellStyleDefault
+                    reuseIdentifier:className]
+                   autorelease];
+        cell.menu   = self;
+        [self st_initializeCell:cell];
+    }
+    
+    if (!key || ![cell.key isEqualToString:key])
+    {
+        // set up the properties
+        [STMenuMaker setInstance:cell properties:data];
+        
+        // key
+        cell.key        = key;
+    }
+	
+    return cell;
+}
+
+// This is called whenever a cell is created. Default does nothing.
+- (void)st_initializeCell:(STMenuTableViewCell *)cell
+{
+    
 }
 
 #pragma mark STMenuProtocol
@@ -137,7 +184,8 @@
                                     useCache:self.st_cachedMenus
                                  propertyKey:key
                               useClassPrefix:@"STMenu"
-                                      suffix:@"ViewController"];
+                                      suffix:@"ViewController"
+                                defaultClass:NULL];
 }
 
 #pragma mark -

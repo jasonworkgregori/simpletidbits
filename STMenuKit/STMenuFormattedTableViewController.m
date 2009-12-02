@@ -8,18 +8,20 @@
 
 #import "STMenuFormattedTableViewController.h"
 #import "STMenuMaker.h"
+#import "STMenuFormattedSectionController.h"
 #import "STMenuTableViewCell.h"
+#import "STMenuBasicSectionController.h"
 
 @interface STMenuFormattedTableViewController ()
 
-@property (nonatomic, retain) NSMutableArray    *sections;
-@property (nonatomic, assign) NSUInteger        subMenuSection;
+@property (nonatomic, retain) NSArray           *st_sections;
+@property (nonatomic, assign) NSUInteger        st_subMenuSection;
 
 @end
 
 
 @implementation STMenuFormattedTableViewController
-@synthesize st_keysToIndexPaths = _keysToIndexPaths;
+@synthesize st_sections = _sections, st_subMenuSection = _subMenuSection;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,7 +29,7 @@
     // want to perform customization that is not appropriate for viewDidLoad.
     if (self = [super initWithStyle:style])
     {
-        
+        self.st_subMenuSection  = NSNotFound;
     }
     return self;
 }
@@ -39,132 +41,84 @@
     [super dealloc];
 }
 
-- (void)st_resetKeysToIndexPaths
+- (void)st_pushMenu:(UIViewController <STMenuProtocol> *)subMenu
+         forSection:(NSUInteger)section
 {
-    self.st_keysToIndexPaths   = nil;
+    self.st_subMenuSection  = section;
+    [self st_pushMenu:subMenu];
 }
 
-- (NSDictionary *)st_keysToIndexPaths
+- (NSArray *)st_sections
 {
-    if (!_keysToIndexPaths)
+    if (!_sections)
     {
-        // build it
-        NSMutableDictionary *newKeysToIndexPaths = [[NSMutableDictionary alloc]
-                                                    init];
-        // go through sections
-        NSUInteger section, count = [self.st_schema count];
-        for (section = 0; section < count; section++)
+        // create sections
+        NSUInteger i, count = [self.st_schema count];
+        NSMutableArray  *sections   = [[NSMutableArray alloc]
+                                       initWithCapacity:count];
+        for (i = 0; i < count; i++)
         {
-            NSArray    *rows    = [[self.st_schema objectAtIndex:section]
-                                        valueForKey:@"rows"];
-            // go through row
-            NSUInteger row, count = [rows count];
-            for (row = 0; row < count; row++)
-            {
-                [newKeysToIndexPaths setValue:[NSIndexPath
-                                               indexPathForRow:row
-                                               inSection:section]
-                                       forKey:[[rows objectAtIndex:row]
-                                               valueForKey:@"key"]];
-            }
+            STMenuFormattedSectionController    *section
+              = [STMenuMaker makeInstanceFromData:
+                 [self.st_schema objectAtIndex:i]
+                                         useCache:nil
+                                      propertyKey:nil
+                                   useClassPrefix:@"STMenu"
+                                           suffix:@"SectionController"
+                                     defaultClass:[self
+                                                   st_defaultSectionClass]];
+            section.menu    = self;
+            section.section = i;
         }
-        
-        self.st_keysToIndexPaths   = newKeysToIndexPaths;
-        [newKeysToIndexPaths release];
+        _sections   = sections;
     }
-    return _keysToIndexPaths;
+    return _sections;
 }
 
-- (NSDictionary *)st_rowDataForKey:(NSString *)key
+- (Class)st_defaultSectionClass
 {
-    return [self st_rowDataForIndexPath:
-            [self.st_keysToIndexPaths valueForKey:key]];
-}
-
-- (NSDictionary *)st_rowDataForIndexPath:(NSIndexPath *)indexPath
-{
-    return [[[self.st_schema
-              objectAtIndex:indexPath.section]
-             valueForKey:@"rows"]
-            objectAtIndex:indexPath.row];
-}
-
-#pragma mark KVO
-
-- (void)startObservingValueForAllKeys
-{
-    for (NSString *key in [self.st_keysToIndexPaths allKeys])
-    {
-        [self.value addObserver:self
-                     forKeyPath:key
-                        options:0
-                        context:NULL];
-    }
-}
-
-- (void)stopObservingValueForAllKeys
-{
-    for (NSString *key in [self.st_keysToIndexPaths allKeys])
-    {
-        [self.value removeObserver:self
-                        forKeyPath:key];
-    }
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    // set submenu if it matches the key
-    if ([self.st_subMenu.key isEqualToString:keyPath])
-    {
-        self.st_subMenu.value   = [self.value valueForKey:keyPath];
-    }
-
-    // see if there is a cell that matches this key available
-    NSIndexPath     *indexPath  = [self.st_keysToIndexPaths
-                                   valueForKey:keyPath];
-    if (indexPath)
-    {
-        // set cell value
-        id      cell   = [self.tableView cellForRowAtIndexPath:indexPath];
-        [cell setValue:[self.value valueForKey:keyPath]
-                forKey:keyPath];
-    }
+    return NULL;
 }
 
 #pragma mark STMenuBaseTableViewController
 
 - (void)st_saveValue:(id)value forSubMenuKey:(NSString *)key
 {
-    [self.value setValue:value forKey:key];
+    if (self.st_subMenuSection != NSNotFound)
+    {
+        STMenuFormattedSectionController    *section
+          = [self.st_sections objectAtIndex:self.st_subMenuSection];
+        [section saveValue:value forSubMenuKey:key];
+        self.st_subMenuSection  = NSNotFound;
+    }
+    else
+    {
+        [self.value setValue:value forKey:key];
+    }
 }
 
 #pragma mark STMenuProtocol
 
 - (void)setPlist:(id)plist andValue:(id)value
 {
-    [self stopObservingValueForAllKeys];
     [super setPlist:plist];
+    self.st_sections    = nil;
     [super setValue:value];
-    [self startObservingValueForAllKeys];
     [self.tableView reloadData];
 }
 
 - (void)setPlist:(id)plist
 {
-    [self stopObservingValueForAllKeys];
     [super setPlist:plist];
-    [self startObservingValueForAllKeys];
+    self.st_sections    = nil;
     [self.tableView reloadData];
 }
 
 - (void)setValue:(id)newValue
 {
-    [self stopObservingValueForAllKeys];
     [super setValue:newValue];
-    [self startObservingValueForAllKeys];
+    [self.st_sections makeObjectsPerformSelector:@selector(menuValueDidChange:)
+                                      withObject:newValue];
     [self.tableView reloadData];
 }
 
@@ -175,150 +129,80 @@
     return [self.st_schema count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section
+{
+    return [[self.st_sections objectAtIndex:section]
+            title];
+}
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[[self.st_schema objectAtIndex:section]
-             valueForKey:@"rows"]
-            count];
+    return [[self.st_sections objectAtIndex:section]
+            numberOfRows];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: get height from cell class
-    return 44;
+    return [[self.st_sections objectAtIndex:indexPath.section]
+            heightForRow:indexPath.row];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: move this stuff into a separate function so other subclasses can
-    // use it.
-    NSDictionary    *rowData    = [self st_rowDataForIndexPath:indexPath];
-    NSString    *key        = [rowData valueForKey:@"key"];
-    NSString    *className  = [STMenuMaker
-                               classNameForData:[rowData valueForKey:@"cell"]];
-    
-    // see if there is already one
-    STMenuTableViewCell *cell
-      = (STMenuTableViewCell *)[tableView
-                                dequeueReusableCellWithIdentifier:className];
-    if (!cell)
-    {
-        // find the class
-        Class   class   = [STMenuMaker classFromClassName:className
-                                               withPrefix:@"ST"
-                                                   suffix:@"TableViewCell"];
-        if (class == NULL)
-        {
-            class   = [STMenuMaker classFromClassName:className
-                                           withPrefix:nil
-                                               suffix:@"TableViewCell"];
-        }
-        if (class == NULL)
-        {
-            class   = [STMenuMaker classFromClassName:className];
-        }
-        if (class == NULL)
-        {
-            [NSException raise:@"STMenuFormattedTableViewController cell maker"
-                        format:@"Could not find class for class name:\n%@",
-             className];            
-        }
-        // create a cell
-        cell    = [[[class alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:className]
-                   autorelease];
-    }
-
-    if (!key || ![key isEqualToString:cell.key])
-    {
-        // set up the properties
-        [STMenuMaker setInstance:cell properties:[rowData valueForKey:@"cell"]];
-        
-        // key
-        cell.key        = key;
-        // title
-        cell.title      = [rowData valueForKey:@"title"];
-        // value
-        cell.value      = [self.value valueForKey:key];
-        if (!cell.value)
-        {
-            // default value
-            cell.value  = [rowData valueForKey:@"value"];
-        }
-    }
-    
-    // Set up the cell...
-	
-    return cell;
+    return [[self.st_sections objectAtIndex:indexPath.section]
+            cellForRow:indexPath.row];
 }
 
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // This way the cell knows if it was selected and can do something about it.
-    // If returns YES, check if we should scroll there
-    [(id)[tableView cellForRowAtIndexPath:indexPath] cellWasSelected];
-    
-    NSDictionary    *rowData    = [self st_rowDataForIndexPath:indexPath];
-    NSDictionary    *menu       = [rowData valueForKey:@"menu"];
-    if (menu)
-    {
-        // if there is a menu, push it!
-        NSString    *key        = [rowData valueForKey:@"key"];
+    // let the cell know it was selected
+    [((STMenuTableViewCell *)[tableView cellForRowAtIndexPath:indexPath])
+     cellWasSelected];
 
-        // get menu
-        UIViewController <STMenuProtocol>   *subMenu = [self
-                                                        st_getMenuFromData:menu
-                                                        forKey:key];
-        // set value
-        subMenu.value   = [self.value valueForKey:key];
-        // set title
-        subMenu.title   = [rowData valueForKey:@"title"];
-        
-        // push it
-        [self st_pushMenu:subMenu];
-    }
+    // tell the section controller whats up
+    [[self.st_sections objectAtIndex:indexPath.section]
+     didSelectRow:indexPath.row];
 }
 
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView
 canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return [[self.st_sections objectAtIndex:indexPath.section]
+            canEditRow:indexPath.row];
 }
-*/
 
+- (BOOL)tableView:(UITableView *)tableView
+shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self.st_sections objectAtIndex:indexPath.section]
+            shouldIndentWhileEditingRow:indexPath.row];
+}
 
-/*
-// Override to support editing the table view.
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[self.st_sections objectAtIndex:indexPath.section]
+            editingStyleForRow:indexPath.row];
+}
+
 - (void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                         withRowAnimation:YES];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        // Create a new instance of the appropriate class, insert it into the
-        // array, and add a new row to the table view
-    }   
+    [[self.st_sections objectAtIndex:indexPath.section]
+     commitEditingStyle:editingStyle
+     forRow:indexPath.row];
 }
-*/
 
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "STMenuBaseTableViewController.h"
-
+#import "STMenuTableViewCell.h"
 
 /*
  
@@ -40,14 +40,17 @@
 @interface STMenuFormattedTableViewController : STMenuBaseTableViewController
 {
   @private
-    NSMutableArray      *_sections;
+    NSArray             *_sections;
     NSUInteger          _subMenuSection;
 }
 
 #pragma mark Subclass or Private Use Only
 
+- (Class)st_defaultSectionClass;
+
 // Section Controller's use this to push a subMenus.
 - (void)st_pushMenu:(UIViewController <STMenuProtocol> *)subMenu
          forSection:(NSUInteger)section;
+
 
 @end

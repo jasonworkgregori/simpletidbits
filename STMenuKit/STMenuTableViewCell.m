@@ -7,10 +7,13 @@
 //
 
 #import "STMenuTableViewCell.h"
+#import "STMenuBaseTableViewController.h"
+#import "STMenuMaker.h"
 
+static NSMutableDictionary *st_classForCellClassName = nil;
 
 @implementation STMenuTableViewCell
-@synthesize key = _key, title = _title, value = _value;
+@synthesize key = _key, menu = _menu;
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier
@@ -26,8 +29,6 @@
 - (void)dealloc
 {
     [_key release];
-    [_title release];
-    [_value release];
     
     [super dealloc];
 }
@@ -45,6 +46,74 @@
 - (void)cellWasSelected
 {
     
+}
+
+// title is copied, defaults to setting textLabel.text to title
+- (void)setTitle:(NSString *)title
+{
+    self.textLabel.text = title;
+}
+
+// defaults to setting defaultTextLabel.text to [value description]
+- (void)setValue:(id)value
+{
+    self.detailTextLabel.text   = [value description];
+}
+
+#pragma mark STATIC methods
+
++ (void)initialize
+{
+    if (self == [STMenuTableViewCell class])
+    {
+        st_classForCellClassName    = [[NSMutableDictionary alloc] init];
+    }
+}
+
++ (Class)classForCellData:(id)data
+             defaultClass:(Class)defaultClass
+{
+    return [self classForCellClassName:[STMenuMaker classNameForData:data]
+                          defaultClass:defaultClass];
+}
+
++ (Class)classForCellClassName:(NSString *)className
+                  defaultClass:(Class)defaultClass
+{
+    if (!className)
+    {
+        return defaultClass;
+    }
+    
+    Class   class   = [[st_classForCellClassName valueForKey:className]
+                       pointerValue];
+    if (class != NULL)
+    {
+        return class;
+    }
+    
+    class   = [STMenuMaker classFromClassName:className
+                                   withPrefix:@"ST"
+                                       suffix:@"TableViewCell"];
+    if (class == NULL)
+    {
+        class   = [STMenuMaker classFromClassName:className
+                                       withPrefix:nil
+                                           suffix:@"TableViewCell"];
+    }
+    if (class == NULL)
+    {
+        class   = [STMenuMaker classFromClassName:className];
+    }
+    if (class == NULL)
+    {
+        [NSException raise:@"STMenuFormattedTableViewController cell maker"
+                    format:@"Could not find class for class name:\n%@",
+         className];            
+    }
+    [st_classForCellClassName setValue:[NSValue valueWithPointer:class]
+                                forKey:className];
+    return class;
 }
 
 #pragma mark -

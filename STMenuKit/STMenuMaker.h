@@ -62,7 +62,8 @@
                   useCache:(NSMutableDictionary *)cache
                propertyKey:(NSString *)key
             useClassPrefix:(NSString *)prefix
-                    suffix:(NSString *)suffix;
+                    suffix:(NSString *)suffix
+              defaultClass:(Class)defaultClass;
 
 // Gets the class name out of the data
 + (NSString *)classNameForData:(id)data;

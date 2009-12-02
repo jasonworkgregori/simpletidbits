@@ -38,7 +38,8 @@
                              useCache:cache
                           propertyKey:key
                        useClassPrefix:nil
-                               suffix:nil];
+                               suffix:nil
+                         defaultClass:NULL];
 }
 
 + (id)makeInstanceFromData:(id)data
@@ -46,6 +47,7 @@
                propertyKey:(NSString *)key
             useClassPrefix:(NSString *)prefix
                     suffix:(NSString *)suffix
+              defaultClass:(Class)defaultClass
 {
     NSString    *className  = [self classNameForData:data];
     
@@ -58,12 +60,16 @@
         Class   class   = [self classFromClassName:className
                                         withPrefix:prefix
                                             suffix:suffix];
-        if (class = NULL)
+        if (class == NULL)
         {
             // try plain class name
             class   = [self classFromClassName:className];
         }
-        if (class = NULL)
+        if (class == NULL)
+        {
+            class   = defaultClass;
+        }
+        if (class == NULL)
         {
             // no class, exception
             [NSException raise:@"STMenuMaker classFromClassName"
@@ -101,10 +107,6 @@
         return [data valueForKey:@"class"];
     }
     
-    [NSException raise:@"STMenuMaker classNameForData"
-                format:@"There was no class name in data. Data:\n%@",
-     data];
-    
     return nil;
 }
 
@@ -119,6 +121,11 @@
                  withPrefix:(NSString *)prefix
                      suffix:(NSString *)suffix
 {
+    if (!className)
+    {
+        return NULL;
+    }
+    
     NSString    *fullClassName  = nil;
     
     // get a full class name by adding suffix/prefix
