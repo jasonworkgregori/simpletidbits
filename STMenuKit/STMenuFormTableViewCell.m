@@ -1,20 +1,20 @@
 //
-//  STMenuEditTableViewCell.m
+//  STMenuFormTableViewCell.m
 //  STMenuKit
 //
-//  Created by Jason Gregori on 12/1/09.
+//  Created by Jason Gregori on 12/3/09.
 //  Copyright 2009 Jason Gregori. All rights reserved.
 //
 
-#import "STMenuEditTableViewCell.h"
+#import "STMenuFormTableViewCell.h"
 
 
-@implementation STMenuEditTableViewCell
+@implementation STMenuFormTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier
 {
-    if (self = [super initWithStyle:UITableViewCellStyleValue2
+    if (self = [super initWithStyle:UITableViewCellStyleValue1
                     reuseIdentifier:reuseIdentifier])
     {
         self.editingAccessoryType

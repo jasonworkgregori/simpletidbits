@@ -55,7 +55,7 @@
 
 - (Class)st_defaultCellClass
 {
-    return NULL;
+    return [STMenuTableViewCell class];
 }
 
 // default menu class

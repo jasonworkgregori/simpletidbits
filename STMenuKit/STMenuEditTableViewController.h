@@ -6,7 +6,6 @@
 //  Copyright 2009 Jason Gregori. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "STMenuBasicTableViewController.h"
 
 /*
@@ -15,7 +14,9 @@
  ==================================
 
  An edit table view. Cells are not selectable unless table is in edit mode.
+ Cells should load a subMenu to edit the item.
  Right bar button item is edit button.
+ These are designed to be like the phone/contacts app.
   
  plist
  -----

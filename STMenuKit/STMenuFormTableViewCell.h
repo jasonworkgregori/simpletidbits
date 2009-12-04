@@ -1,18 +1,18 @@
 //
-//  STMenuEditTableViewCell.h
+//  STMenuFormTableViewCell.h
 //  STMenuKit
 //
-//  Created by Jason Gregori on 12/1/09.
+//  Created by Jason Gregori on 12/3/09.
 //  Copyright 2009 Jason Gregori. All rights reserved.
 //
 
 #import "STMenuTableViewCell.h"
 
 /*
- An edit style cell. Looks like the Phone/Contacts app cells. Sets
+ A form style cell. Looks like the Settings app cells. Sets
  editingAccessoryType to UITableViewCellAccessoryDisclosureIndicator
  */
 
-@interface STMenuEditTableViewCell : STMenuTableViewCell
+@interface STMenuFormTableViewCell : STMenuTableViewCell
 
 @end

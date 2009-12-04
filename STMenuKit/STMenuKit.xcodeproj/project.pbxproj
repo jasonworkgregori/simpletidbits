@@ -18,6 +18,10 @@
 		7959039910C61AA200DB0F5F /* STMenuKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7959039810C61AA200DB0F5F /* STMenuKit.h */; };
 		79818EA110B0DD0D00B32881 /* STMenuMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 79818E9F10B0DD0D00B32881 /* STMenuMaker.h */; };
 		79818EA210B0DD0D00B32881 /* STMenuMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 79818EA010B0DD0D00B32881 /* STMenuMaker.m */; };
+		799F707D10C8C5150055C744 /* STMenuFormTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 799F707B10C8C5150055C744 /* STMenuFormTableViewController.h */; };
+		799F707E10C8C5150055C744 /* STMenuFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799F707C10C8C5150055C744 /* STMenuFormTableViewController.m */; };
+		799F708110C8C8D80055C744 /* STMenuFormTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 799F707F10C8C8D80055C744 /* STMenuFormTableViewCell.h */; };
+		799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 799F708010C8C8D80055C744 /* STMenuFormTableViewCell.m */; };
 		79B303EE10A7463C00CE423D /* STMenuProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B303EC10A7463C00CE423D /* STMenuProtocol.h */; };
 		79B304A810A7A6BB00CE423D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B304A710A7A6BB00CE423D /* UIKit.framework */; };
 		79D1798A10B8AD73008A5B54 /* STMenuTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D1798810B8AD73008A5B54 /* STMenuTableViewCell.h */; };
@@ -44,6 +48,10 @@
 		7959039810C61AA200DB0F5F /* STMenuKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuKit.h; sourceTree = "<group>"; };
 		79818E9F10B0DD0D00B32881 /* STMenuMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuMaker.h; sourceTree = "<group>"; };
 		79818EA010B0DD0D00B32881 /* STMenuMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuMaker.m; sourceTree = "<group>"; };
+		799F707B10C8C5150055C744 /* STMenuFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuFormTableViewController.h; sourceTree = "<group>"; };
+		799F707C10C8C5150055C744 /* STMenuFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuFormTableViewController.m; sourceTree = "<group>"; };
+		799F707F10C8C8D80055C744 /* STMenuFormTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuFormTableViewCell.h; sourceTree = "<group>"; };
+		799F708010C8C8D80055C744 /* STMenuFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuFormTableViewCell.m; sourceTree = "<group>"; };
 		79B303EC10A7463C00CE423D /* STMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuProtocol.h; sourceTree = "<group>"; };
 		79B304A710A7A6BB00CE423D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		79D1798810B8AD73008A5B54 /* STMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuTableViewCell.h; sourceTree = "<group>"; };
@@ -86,6 +94,7 @@
 				7959039810C61AA200DB0F5F /* STMenuKit.h */,
 				08FB77AEFE84172EC02AAC07 /* Basics */,
 				7959030910C615E900DB0F5F /* Edit Menu */,
+				799F707A10C8C48A0055C744 /* Form Menu */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -143,6 +152,17 @@
 			name = "Edit Menu";
 			sourceTree = "<group>";
 		};
+		799F707A10C8C48A0055C744 /* Form Menu */ = {
+			isa = PBXGroup;
+			children = (
+				799F707F10C8C8D80055C744 /* STMenuFormTableViewCell.h */,
+				799F708010C8C8D80055C744 /* STMenuFormTableViewCell.m */,
+				799F707B10C8C5150055C744 /* STMenuFormTableViewController.h */,
+				799F707C10C8C5150055C744 /* STMenuFormTableViewController.m */,
+			);
+			name = "Form Menu";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -162,6 +182,8 @@
 				795902F610C610E300DB0F5F /* STMenuEditTableViewCell.h in Headers */,
 				7959030210C614CA00DB0F5F /* STMenuEditTableViewController.h in Headers */,
 				7959039910C61AA200DB0F5F /* STMenuKit.h in Headers */,
+				799F707D10C8C5150055C744 /* STMenuFormTableViewController.h in Headers */,
+				799F708110C8C8D80055C744 /* STMenuFormTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +239,8 @@
 				79312D6B10BA400C00479D69 /* STMenuBasicSectionController.m in Sources */,
 				795902F710C610E300DB0F5F /* STMenuEditTableViewCell.m in Sources */,
 				7959030310C614CA00DB0F5F /* STMenuEditTableViewController.m in Sources */,
+				799F707E10C8C5150055C744 /* STMenuFormTableViewController.m in Sources */,
+				799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
