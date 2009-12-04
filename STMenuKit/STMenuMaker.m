@@ -50,16 +50,26 @@
               defaultClass:(Class)defaultClass
 {
     NSString    *className  = [self classNameForData:data];
+    Class       class       = NULL;
+    if (!className)
+    {
+        // set the class name, this way we have a key for the cache
+        className   = NSStringFromClass(defaultClass);
+        class       = defaultClass;
+    }
     
     // see if it's in the cache
     id          instance    = [cache valueForKey:className];
 
     if (!instance)
     {
-        // try class with prefix and suffix
-        Class   class   = [self classFromClassName:className
-                                        withPrefix:prefix
-                                            suffix:suffix];
+        if (class == NULL)
+        {
+            // try class with prefix and suffix
+            class   = [self classFromClassName:className
+                                    withPrefix:prefix
+                                        suffix:suffix];
+        }
         if (class == NULL)
         {
             // try plain class name

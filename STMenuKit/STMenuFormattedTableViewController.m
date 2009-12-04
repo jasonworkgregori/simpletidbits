@@ -110,17 +110,27 @@
 
 - (void)setPlist:(id)plist
 {
-    [super setPlist:plist];
-    self.st_sections    = nil;
-    [self.tableView reloadData];
+    if (![self.plist isEqual:plist])
+    {
+        // we only need to change any stuff if the plist changed
+        [super setPlist:plist];
+        self.st_sections    = nil;
+        [self.tableView reloadData];
+    }
 }
 
 - (void)setValue:(id)newValue
 {
-    [super setValue:newValue];
-    [self.st_sections makeObjectsPerformSelector:@selector(menuValueDidChange:)
-                                      withObject:newValue];
-    [self.tableView reloadData];
+    if (self.value != newValue)
+    {
+        // we only need to reset this stuff it the value changed
+        // we can't do isEqual: because we use KVO on it
+        [super setValue:newValue];
+        [self.st_sections
+         makeObjectsPerformSelector:@selector(menuValueDidChange:)
+         withObject:newValue];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark Table view methods

@@ -41,6 +41,9 @@
 // default cell class
 - (Class)st_defaultCellClass;
 
+// default menu class, defaults to [self class]
+- (Class)st_defaultMenuClass;
+
 // Gets a cell from the table view or creates one.
 // Cell is a STMenuMaker Item.
 // Sets menu property and key property.
@@ -69,7 +72,8 @@
 // Uses "key" to determine if we are using the menu for a new use.
 // If key is different, resets all values and calls 'st_prepareForReuse'.
 // Use nil key to reset no matter what.
-// Either returns a view controller or throws an exception
+// Uses st_defaultMenuClass for the default menu class.
+// Either returns a view controller or throws an exception.
 - (UIViewController <STMenuProtocol> *)st_getMenuFromData:(id)data
                                                    forKey:(NSString *)key;
 

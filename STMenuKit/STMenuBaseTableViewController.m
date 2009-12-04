@@ -58,14 +58,25 @@
     return NULL;
 }
 
+// default menu class
+- (Class)st_defaultMenuClass
+{
+    return [self class];
+}
+
 - (STMenuTableViewCell *)st_cellWithCellData:(id)data
                                          key:(NSString *)key
 {
     NSString    *className  = [STMenuMaker classNameForData:data];
+    if (!className && [self st_defaultCellClass] != NULL)
+    {
+        // we need an identifier
+        className   = NSStringFromClass([self st_defaultCellClass]);
+    }
     
     // see if there is already one
     STMenuTableViewCell *cell
-    = (id)[self.tableView dequeueReusableCellWithIdentifier:className];
+      = (id)[self.tableView dequeueReusableCellWithIdentifier:className];
     
     if (!cell)
     {
@@ -190,7 +201,7 @@
                                  propertyKey:key
                               useClassPrefix:@"STMenu"
                                       suffix:@"ViewController"
-                                defaultClass:NULL];
+                                defaultClass:[self st_defaultMenuClass]];
 }
 
 #pragma mark -

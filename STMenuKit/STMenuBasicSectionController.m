@@ -39,7 +39,10 @@
         [_rows release];
         _rows   = [rows copy];
         
-        self.keys   = [rows valueForKey:@"key"];
+        self.keys   = [[rows valueForKey:@"key"]
+                       filteredArrayUsingPredicate:
+                       [NSPredicate
+                        predicateWithFormat:@"self != NULL"]];
         
         [self menuValueDidChange:self.menu.value];
     }
@@ -67,7 +70,7 @@
     {
         NSString    *key    = [[self.rows objectAtIndex:i] valueForKey:@"key"];
         // make sure we haven't already done this one
-        if (![encounteredKeys containsObject:key])
+        if (key && ![encounteredKeys containsObject:key])
         {
             // stop observing old value
             [self.values removeObserver:self forKeyPath:key];
@@ -168,7 +171,11 @@
 
 - (id)valueForRow:(NSUInteger)row
 {
-    return [self.values valueForKey:[self keyForRow:row]];
+    if ([self keyForRow:row])
+    {
+        return [self.values valueForKey:[self keyForRow:row]];
+    }
+    return self.values;
 }
 
 - (id)cellDataForRow:(NSUInteger)row

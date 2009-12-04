@@ -21,6 +21,15 @@
     return self;
 }
 
+#pragma mark STMenuBaseTableViewController
+
+- (Class)st_defaultCellClass
+{
+    return [STMenuEditTableViewCell class];
+}
+
+#pragma mark UIViewController
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,9 +38,12 @@
     self.tableView.allowsSelectionDuringEditing = YES;
 }
 
-- (Class)st_defaultCellClass
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
-    return [STMenuEditTableViewCell class];
+    [super setEditing:editing animated:animated];
+    
+    // hide the back button when editing
+    [self.navigationItem setHidesBackButton:editing animated:animated];
 }
 
 @end
