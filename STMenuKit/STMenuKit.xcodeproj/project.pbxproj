@@ -95,6 +95,7 @@
 				08FB77AEFE84172EC02AAC07 /* Basics */,
 				7959030910C615E900DB0F5F /* Edit Menu */,
 				799F707A10C8C48A0055C744 /* Form Menu */,
+				794C778210CA07B400717975 /* More Base Cells */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -139,6 +140,13 @@
 				AA747D9E0F9514B9006C5449 /* STMenuKit_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		794C778210CA07B400717975 /* More Base Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "More Base Cells";
 			sourceTree = "<group>";
 		};
 		7959030910C615E900DB0F5F /* Edit Menu */ = {

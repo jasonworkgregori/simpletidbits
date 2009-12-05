@@ -40,6 +40,7 @@
 - (void)saveValue:(id)value forSubMenuKey:(NSString *)key;
 
 // Cells
+- (Class)classForRow:(NSUInteger)row;
 - (NSInteger)numberOfRows;
 
 // The next three methods will use the subclass methods to figure these out.
@@ -60,7 +61,6 @@
 
 // Subclass these! OR height and cellForRow methods OR both
 // default: will get class from row data
-- (Class)classForRow:(NSUInteger)row;
 - (NSString *)titleForRow:(NSUInteger)row;
 - (id)valueForRow:(NSUInteger)row;
 - (id)cellDataForRow:(NSUInteger)row;

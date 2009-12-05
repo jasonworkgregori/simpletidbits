@@ -23,6 +23,9 @@
 + (Class)classForCellClassName:(NSString *)className
                   defaultClass:(Class)defaultClass;
 
+// Defaults to class name, the only use is really to set it to nil so it can't
+// be reused.
++ (NSString *)cellIdentifier;
 + (CGFloat)heightWithTitle:(NSString *)title value:(id)value;
 
 - (void)st_prepareForReuse;

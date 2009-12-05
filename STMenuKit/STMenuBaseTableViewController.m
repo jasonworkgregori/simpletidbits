@@ -68,25 +68,25 @@
                                          key:(NSString *)key
 {
     NSString    *className  = [STMenuMaker classNameForData:data];
-    if (!className && [self st_defaultCellClass] != NULL)
-    {
-        // we need an identifier
-        className   = NSStringFromClass([self st_defaultCellClass]);
-    }
+    Class       cellClass       = [STMenuTableViewCell
+                                   classForCellClassName:className
+                                   defaultClass:[self st_defaultCellClass]];
+    NSString    *cellIdentifier = [cellClass cellIdentifier];
+    STMenuTableViewCell *cell   = nil;
     
-    // see if there is already one
-    STMenuTableViewCell *cell
-      = (id)[self.tableView dequeueReusableCellWithIdentifier:className];
+    if (cellIdentifier)
+    {
+        // see if there is already one
+        cell    = (id)[self.tableView
+                       dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
     
     if (!cell)
     {
         // create a cell
-        cell    = [[[[STMenuTableViewCell
-                      classForCellClassName:className
-                      defaultClass:[self st_defaultCellClass]]
-                     alloc]
+        cell    = [[[cellClass alloc]
                     initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:className]
+                    reuseIdentifier:cellIdentifier]
                    autorelease];
         cell.menu   = self;
         [self st_initializeCell:cell];

@@ -70,6 +70,11 @@ static NSMutableDictionary *st_classForCellClassName = nil;
     }
 }
 
++ (NSString *)cellIdentifier
+{
+    return NSStringFromClass(self);
+}
+
 + (Class)classForCellData:(id)data
              defaultClass:(Class)defaultClass
 {
