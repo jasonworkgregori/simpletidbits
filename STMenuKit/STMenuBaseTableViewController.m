@@ -58,6 +58,11 @@
     return [STMenuTableViewCell class];
 }
 
+- (NSString *)st_customCellPrefix
+{
+    return nil;
+}
+
 // default menu class
 - (Class)st_defaultMenuClass
 {
@@ -70,6 +75,7 @@
     NSString    *className  = [STMenuMaker classNameForData:data];
     Class       cellClass       = [STMenuTableViewCell
                                    classForCellClassName:className
+                                   customPrefix:[self st_customCellPrefix]
                                    defaultClass:[self st_defaultCellClass]];
     NSString    *cellIdentifier = [cellClass cellIdentifier];
     STMenuTableViewCell *cell   = nil;

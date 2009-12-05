@@ -19,8 +19,10 @@
 @property (nonatomic, assign)   STMenuBaseTableViewController   *menu;
 
 + (Class)classForCellData:(id)data
+             customPrefix:(NSString *)prefix
              defaultClass:(Class)defaultClass;
 + (Class)classForCellClassName:(NSString *)className
+                  customPrefix:(NSString *)prefix
                   defaultClass:(Class)defaultClass;
 
 // Defaults to class name, the only use is really to set it to nil so it can't

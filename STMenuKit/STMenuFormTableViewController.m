@@ -28,6 +28,11 @@
     return [STMenuFormTableViewCell class];
 }
 
+- (NSString *)st_customCellPrefix
+{
+    return @"STMenuForm";
+}
+
 #pragma mark UIViewController
 
 - (void)viewDidLoad

@@ -28,6 +28,11 @@
     return [STMenuEditTableViewCell class];
 }
 
+- (NSString *)st_customCellPrefix
+{
+    return @"STMenuEdit";
+}
+
 #pragma mark UIViewController
 
 - (void)viewDidLoad

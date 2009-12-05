@@ -76,13 +76,16 @@ static NSMutableDictionary *st_classForCellClassName = nil;
 }
 
 + (Class)classForCellData:(id)data
+             customPrefix:(NSString *)prefix
              defaultClass:(Class)defaultClass
 {
     return [self classForCellClassName:[STMenuMaker classNameForData:data]
+                          customPrefix:prefix
                           defaultClass:defaultClass];
 }
 
 + (Class)classForCellClassName:(NSString *)className
+                  customPrefix:(NSString *)prefix
                   defaultClass:(Class)defaultClass
 {
     if (!className)
@@ -96,9 +99,18 @@ static NSMutableDictionary *st_classForCellClassName = nil;
         return class;
     }
     
-    class   = [STMenuMaker classFromClassName:className
-                                   withPrefix:@"STMenu"
-                                       suffix:@"TableViewCell"];
+    if (prefix)
+    {
+        class   = [STMenuMaker classFromClassName:className
+                                       withPrefix:prefix
+                                           suffix:@"TableViewCell"];
+    }
+    if (class == NULL)
+    {
+        class   = [STMenuMaker classFromClassName:className
+                                       withPrefix:@"STMenu"
+                                           suffix:@"TableViewCell"];
+    }
     if (class == NULL)
     {
         class   = [STMenuMaker classFromClassName:className

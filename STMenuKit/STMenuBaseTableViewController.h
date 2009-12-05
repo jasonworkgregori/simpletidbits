@@ -40,6 +40,9 @@
 
 // default cell class
 - (Class)st_defaultCellClass;
+// This is used to get cell classes from names
+// customCellPrefix + class data name + @"TableViewCell"
+- (NSString *)st_customCellPrefix;
 
 // default menu class, defaults to [self class]
 - (Class)st_defaultMenuClass;

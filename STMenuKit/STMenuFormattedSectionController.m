@@ -101,6 +101,7 @@
 {
     return [STMenuTableViewCell
             classForCellData:[self cellDataForRow:row]
+            customPrefix:[self.menu st_customCellPrefix]
             defaultClass:[self.menu st_defaultCellClass]];
 }
 
