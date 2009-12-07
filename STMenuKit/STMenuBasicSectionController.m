@@ -78,10 +78,10 @@
             // set default values
             id      defaultValue    = [[self.rows objectAtIndex:i]
                                        valueForKey:@"defaultValue"];
-            if (newValue && defaultValue && ![newValue valueForKey:key])
+            if (newValue && defaultValue && ![newValue valueForKeyPath:key])
             {
                 [newValue setValue:defaultValue
-                            forKey:key];
+                        forKeyPath:key];
             }
             
             // start observing new value
@@ -108,30 +108,26 @@
         // reload cells for this keyPath
         NSRange     range;
         range.location  = 0;
-        range.location  = [self.keys count];
+        range.length    = [self.keys count];
         NSUInteger      row;
-        NSMutableArray  *rows   = [NSMutableArray array];
         while (range.location < [self.keys count] &&
                (row = [self.keys indexOfObject:keyPath inRange:range])
                != NSNotFound)
         {
-            [rows addObject:
-             [NSIndexPath indexPathForRow:row inSection:self.section]];
+            [((STMenuTableViewCell *)
+              [self.menu.tableView cellForRowAtIndexPath:
+               [NSIndexPath indexPathForRow:row inSection:self.section]])
+             setValue:[self.values valueForKeyPath:keyPath]];
 
             // changing the range to search for any matches past here
             range.location  = row+1;
             range.length    = [self.keys count] - range.location;
         }
         
-        // reload cells
-        [self.menu.tableView
-         reloadRowsAtIndexPaths:rows
-         withRowAnimation:UITableViewRowAnimationFade];
-        
         // change value of subMenu if applicable
         if ([self.menu.st_subMenu.key isEqualToString:keyPath])
         {
-            self.menu.st_subMenu.value = [self.values valueForKey:keyPath];
+            self.menu.st_subMenu.value = [self.values valueForKeyPath:keyPath];
         }
     }
     else
@@ -144,7 +140,7 @@
 // submenus
 - (void)saveValue:(id)value forSubMenuKey:(NSString *)key
 {
-    [self.values setValue:value forKey:key];
+    [self.values setValue:value forKeyPath:key];
 }
 
 // cells
@@ -173,7 +169,7 @@
 {
     if ([self keyForRow:row])
     {
-        return [self.values valueForKey:[self keyForRow:row]];
+        return [self.values valueForKeyPath:[self keyForRow:row]];
     }
     return self.values;
 }
@@ -191,6 +187,17 @@
 - (id)menuDataForRow:(NSUInteger)row
 {
     return [[self.rows objectAtIndex:row] valueForKey:@"menu"];
+}
+
+#pragma mark -
+#pragma mark Delegate Methods
+#pragma mark STMenuTableViewCellDelegate
+
+- (void)menuTableViewCell:(STMenuTableViewCell *)cell
+           didChangeValue:(id)newValue
+{
+    // set value on main values, this will cause KVO to kick in.
+    [self.values setValue:newValue forKeyPath:cell.key];
 }
 
 @end

@@ -94,7 +94,7 @@
     }
     else
     {
-        [self.value setValue:value forKey:key];
+        [self.value setValue:value forKeyPath:key];
     }
 }
 

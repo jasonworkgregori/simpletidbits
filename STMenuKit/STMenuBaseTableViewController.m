@@ -227,6 +227,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+        
     if (self.st_subMenu)
     {
         // If there is a submenu we must have just popped back from it
@@ -241,7 +242,13 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
 
+#pragma mark -
+#pragma mark Delegate Methods
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

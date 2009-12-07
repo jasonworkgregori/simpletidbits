@@ -177,7 +177,11 @@
     {
         data    = [[data mutableCopy] autorelease];
         [data setValue:nil forKey:@"class"];
-        [instance setValuesForKeysWithDictionary:data];
+        for (NSString *keyPath in data)
+        {
+            [instance setValue:[data valueForKey:keyPath]
+                    forKeyPath:keyPath];
+        }
     }
     
     return instance;

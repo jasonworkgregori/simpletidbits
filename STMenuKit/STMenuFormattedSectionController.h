@@ -24,6 +24,7 @@
  */
 
 @interface STMenuFormattedSectionController : NSObject
+<STMenuTableViewCellDelegate>
 {
     STMenuFormattedTableViewController  *_menu;
     NSUInteger      _section;
@@ -49,7 +50,7 @@
 - (void)didSelectRow:(NSUInteger)row;
 // height uses class, title, and value
 - (CGFloat)heightForRow:(NSUInteger)row;
-// cell uses title, value, key, and row data
+// cell uses title, value, key, and row data. sets cell delegate to self.
 - (STMenuTableViewCell *)cellForRow:(NSUInteger)row;
 
 // Cell editing

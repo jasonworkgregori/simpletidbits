@@ -11,8 +11,10 @@
 
 /*
  
- STMenuFormattedTableViewController
- ==================================
+ STMenuBasicTableViewController
+ ==============================
+ 
+ This Menu defaults to using Basic Section Controllers
  
  plist
  -----

@@ -11,6 +11,8 @@
 		79312D3A10BA029B00479D69 /* STMenuBasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79312D3810BA029B00479D69 /* STMenuBasicTableViewController.m */; };
 		79312D6A10BA400C00479D69 /* STMenuBasicSectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79312D6810BA400C00479D69 /* STMenuBasicSectionController.h */; };
 		79312D6B10BA400C00479D69 /* STMenuBasicSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79312D6910BA400C00479D69 /* STMenuBasicSectionController.m */; };
+		794C780F10CA17AF00717975 /* STMenuTextFieldTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 794C780D10CA17AF00717975 /* STMenuTextFieldTableViewCell.h */; };
+		794C781010CA17AF00717975 /* STMenuTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 794C780E10CA17AF00717975 /* STMenuTextFieldTableViewCell.m */; };
 		795902F610C610E300DB0F5F /* STMenuEditTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 795902F410C610E300DB0F5F /* STMenuEditTableViewCell.h */; };
 		795902F710C610E300DB0F5F /* STMenuEditTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 795902F510C610E300DB0F5F /* STMenuEditTableViewCell.m */; };
 		7959030210C614CA00DB0F5F /* STMenuEditTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7959030010C614CA00DB0F5F /* STMenuEditTableViewController.h */; };
@@ -41,6 +43,8 @@
 		79312D3810BA029B00479D69 /* STMenuBasicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuBasicTableViewController.m; sourceTree = "<group>"; };
 		79312D6810BA400C00479D69 /* STMenuBasicSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuBasicSectionController.h; sourceTree = "<group>"; };
 		79312D6910BA400C00479D69 /* STMenuBasicSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuBasicSectionController.m; sourceTree = "<group>"; };
+		794C780D10CA17AF00717975 /* STMenuTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		794C780E10CA17AF00717975 /* STMenuTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		795902F410C610E300DB0F5F /* STMenuEditTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuEditTableViewCell.h; sourceTree = "<group>"; };
 		795902F510C610E300DB0F5F /* STMenuEditTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuEditTableViewCell.m; sourceTree = "<group>"; };
 		7959030010C614CA00DB0F5F /* STMenuEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuEditTableViewController.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 		794C778210CA07B400717975 /* More Base Cells */ = {
 			isa = PBXGroup;
 			children = (
+				794C780D10CA17AF00717975 /* STMenuTextFieldTableViewCell.h */,
+				794C780E10CA17AF00717975 /* STMenuTextFieldTableViewCell.m */,
 			);
 			name = "More Base Cells";
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 				7959039910C61AA200DB0F5F /* STMenuKit.h in Headers */,
 				799F707D10C8C5150055C744 /* STMenuFormTableViewController.h in Headers */,
 				799F708110C8C8D80055C744 /* STMenuFormTableViewCell.h in Headers */,
+				794C780F10CA17AF00717975 /* STMenuTextFieldTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +256,7 @@
 				7959030310C614CA00DB0F5F /* STMenuEditTableViewController.m in Sources */,
 				799F707E10C8C5150055C744 /* STMenuFormTableViewController.m in Sources */,
 				799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */,
+				794C781010CA17AF00717975 /* STMenuTextFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

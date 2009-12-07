@@ -50,6 +50,7 @@
                                    key:[self keyForRow:row]];
     [cell setTitle:[self titleForRow:row]];
     [cell setValue:[self valueForRow:row]];
+    cell.delegate   = self;
     return cell;
 }
 
@@ -128,6 +129,16 @@
 - (id)menuDataForRow:(NSUInteger)row
 {
     return nil;
+}
+
+#pragma mark -
+#pragma mark Delegate Methods
+#pragma mark STMenuTableViewCellDelegate
+
+- (void)menuTableViewCell:(STMenuTableViewCell *)cell
+           didChangeValue:(id)newValue
+{
+    
 }
 
 @end

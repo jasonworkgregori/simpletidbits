@@ -7,13 +7,12 @@
 //
 
 #import "STMenuTableViewCell.h"
-#import "STMenuBaseTableViewController.h"
 #import "STMenuMaker.h"
 
 static NSMutableDictionary *st_classForCellClassName = nil;
 
 @implementation STMenuTableViewCell
-@synthesize key = _key, menu = _menu;
+@synthesize key = _key, menu = _menu, delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier
