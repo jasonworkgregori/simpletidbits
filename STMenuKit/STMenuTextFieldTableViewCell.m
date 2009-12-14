@@ -175,4 +175,13 @@
     return self.selected;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // end editing, deselect cell
+    [self.menu.tableView
+     deselectRowAtIndexPath:[self.menu.tableView indexPathForCell:self]
+     animated:NO];
+    return NO;
+}
+
 @end

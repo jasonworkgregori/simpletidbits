@@ -165,6 +165,23 @@
     }
 }
 
+- (void)setLoading:(BOOL)loading
+{
+    [self setLoading:loading animated:NO];
+}
+
+- (BOOL)loading
+{
+    return _loading;
+}
+
+- (void)setLoading:(BOOL)loading animated:(BOOL)animated
+{
+    _loading    = loading;
+    
+    self.view.userInteractionEnabled    = !loading;
+}
+
 // This is called when a menu is reused. Reset all editable properties.
 - (void)st_prepareForReuse
 {
@@ -212,6 +229,14 @@
 
 #pragma mark -
 #pragma mark UIViewController
+
+- (void)loadView
+{
+    [super loadView];
+    
+    // got to set loading correctly
+    [self setLoading:self.loading];
+}
 
 - (void)didReceiveMemoryWarning
 {

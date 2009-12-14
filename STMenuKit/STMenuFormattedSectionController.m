@@ -19,6 +19,12 @@
     [super dealloc];
 }
 
+- (void)setMenu:(STMenuFormattedTableViewController *)menu
+{
+    _menu   = menu;
+    [self menuValueDidChange:menu.value];
+}
+
 - (void)menuValueDidChange:(id)newValue
 {
     

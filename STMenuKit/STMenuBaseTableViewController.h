@@ -21,6 +21,7 @@
     // used to store plist data
     id              _schema;
     id              _value;
+    BOOL            _loading;
     
     NSString        *_key;
     BOOL            _parentMenuShouldSave;

@@ -16,7 +16,7 @@
 {
     if (self = [super initWithStyle:UITableViewStyleGrouped])
     {
-        self.editing    = YES;
+
     }
     return self;
 }
@@ -39,6 +39,7 @@
 {
     [super viewDidLoad];
     
+    self.editing    = YES;
     self.tableView.allowsSelectionDuringEditing = YES;
 }
 

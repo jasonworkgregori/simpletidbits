@@ -23,7 +23,13 @@
 @property (nonatomic, copy)     NSString    *key;
 @property (nonatomic, assign)   BOOL        parentMenuShouldSave;
 
+// When a menu is loading, it should stop the user from accessing anything and
+// display some kind of ui so the user knows what's going on.
+@property (nonatomic, assign)   BOOL        loading;
+
 - (void)setPlist:(id)plist andValue:(id)value;
+
+- (void)setLoading:(BOOL)loading animated:(BOOL)animated;
 
 // create an instance of a menu
 + (id)menu;

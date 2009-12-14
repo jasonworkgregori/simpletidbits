@@ -105,7 +105,10 @@
     [super setPlist:plist];
     self.st_sections    = nil;
     [self setValue:value];
-    [self.tableView reloadData];
+    if ([self isViewLoaded])
+    {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)setPlist:(id)plist
@@ -115,7 +118,10 @@
         // we only need to change any stuff if the plist changed
         [super setPlist:plist];
         self.st_sections    = nil;
-        [self.tableView reloadData];
+        if ([self isViewLoaded])
+        {
+            [self.tableView reloadData];
+        }
     }
 }
 
@@ -129,7 +135,10 @@
         [self.st_sections
          makeObjectsPerformSelector:@selector(menuValueDidChange:)
          withObject:newValue];
-        [self.tableView reloadData];
+        if ([self isViewLoaded])
+        {
+            [self.tableView reloadData];
+        }
     }
 }
 

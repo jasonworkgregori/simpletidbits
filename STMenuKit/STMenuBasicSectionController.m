@@ -55,6 +55,47 @@
 
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if (self.values == object && [self.keys containsObject:keyPath])
+    {
+        // reload cells for this keyPath
+        NSRange     range;
+        range.location  = 0;
+        range.length    = [self.keys count];
+        NSUInteger      row;
+        while (range.location < [self.keys count] &&
+               (row = [self.keys indexOfObject:keyPath inRange:range])
+               != NSNotFound)
+        {
+            [((STMenuTableViewCell *)
+              [self.menu.tableView cellForRowAtIndexPath:
+               [NSIndexPath indexPathForRow:row inSection:self.section]])
+             setValue:[self.values valueForKeyPath:keyPath]];
+
+            // changing the range to search for any matches past here
+            range.location  = row+1;
+            range.length    = [self.keys count] - range.location;
+        }
+        
+        // change value of subMenu if applicable
+        if ([self.menu.st_subMenu.key isEqualToString:keyPath])
+        {
+            self.menu.st_subMenu.value = [self.values valueForKeyPath:keyPath];
+        }
+    }
+    else
+    {
+        // if this isn't our value OR we don't have this keyPath
+        [object removeObserver:self forKeyPath:keyPath];
+    }
+}
+
+#pragma mark STMenuFormattedSectionController
+
 - (void)menuValueDidChange:(id)newValue
 {
     if (!self.rows)
@@ -96,45 +137,6 @@
     
     // retain new value
     self.values     = newValue; 
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if (self.values == object && [self.keys containsObject:keyPath])
-    {
-        // reload cells for this keyPath
-        NSRange     range;
-        range.location  = 0;
-        range.length    = [self.keys count];
-        NSUInteger      row;
-        while (range.location < [self.keys count] &&
-               (row = [self.keys indexOfObject:keyPath inRange:range])
-               != NSNotFound)
-        {
-            [((STMenuTableViewCell *)
-              [self.menu.tableView cellForRowAtIndexPath:
-               [NSIndexPath indexPathForRow:row inSection:self.section]])
-             setValue:[self.values valueForKeyPath:keyPath]];
-
-            // changing the range to search for any matches past here
-            range.location  = row+1;
-            range.length    = [self.keys count] - range.location;
-        }
-        
-        // change value of subMenu if applicable
-        if ([self.menu.st_subMenu.key isEqualToString:keyPath])
-        {
-            self.menu.st_subMenu.value = [self.values valueForKeyPath:keyPath];
-        }
-    }
-    else
-    {
-        // if this isn't our value OR we don't have this keyPath
-        [object removeObserver:self forKeyPath:keyPath];
-    }
 }
 
 // submenus
