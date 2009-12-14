@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7901210C10D5D52F005F6B20 /* STTableViewTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7901210A10D5D52F005F6B20 /* STTableViewTextView.h */; };
+		7901210D10D5D52F005F6B20 /* STTableViewTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7901210B10D5D52F005F6B20 /* STTableViewTextView.m */; };
 		790546C2106EDDF1006ECB61 /* UIAlertViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546C0106EDDF1006ECB61 /* UIAlertViewAdditions.h */; };
 		790546C3106EDDF1006ECB61 /* UIAlertViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 790546C1106EDDF1006ECB61 /* UIAlertViewAdditions.m */; };
 		790546C6106EDEB0006ECB61 /* UIColorAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 790546C4106EDEB0006ECB61 /* UIColorAdditions.h */; };
@@ -33,6 +35,8 @@
 		796665B51085705E007992BB /* NSSetAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 796665B31085705E007992BB /* NSSetAdditions.h */; };
 		796665B61085705E007992BB /* NSSetAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 796665B41085705E007992BB /* NSSetAdditions.m */; };
 		7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = 7979A56E1080519F00A31539 /* SimpleTidbits.h */; };
+		799189E310D0AA4800B4002A /* STBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 799189E110D0AA4800B4002A /* STBorderView.h */; };
+		799189E410D0AA4800B4002A /* STBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 799189E210D0AA4800B4002A /* STBorderView.m */; };
 		79A5DADA106ED8FD00891E58 /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */; };
 		79A5DADB106ED8FD00891E58 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */; };
 		79BF1FDC1072E805003FBD85 /* STSimpleURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */; };
@@ -46,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7901210A10D5D52F005F6B20 /* STTableViewTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTableViewTextView.h; sourceTree = "<group>"; };
+		7901210B10D5D52F005F6B20 /* STTableViewTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTableViewTextView.m; sourceTree = "<group>"; };
 		790546C0106EDDF1006ECB61 /* UIAlertViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAlertViewAdditions.h; sourceTree = "<group>"; };
 		790546C1106EDDF1006ECB61 /* UIAlertViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAlertViewAdditions.m; sourceTree = "<group>"; };
 		790546C4106EDEB0006ECB61 /* UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAdditions.h; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		796665B31085705E007992BB /* NSSetAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSetAdditions.h; sourceTree = "<group>"; };
 		796665B41085705E007992BB /* NSSetAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSetAdditions.m; sourceTree = "<group>"; };
 		7979A56E1080519F00A31539 /* SimpleTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTidbits.h; sourceTree = "<group>"; };
+		799189E110D0AA4800B4002A /* STBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBorderView.h; sourceTree = "<group>"; };
+		799189E210D0AA4800B4002A /* STBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBorderView.m; sourceTree = "<group>"; };
 		79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimpleURLConnection.h; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 				79BF201F10730EAE003FBD85 /* STFileCache.m */,
 				79619097107EC3CD000937C1 /* STImageView.h */,
 				79619098107EC3CD000937C1 /* STImageView.m */,
+				799189E110D0AA4800B4002A /* STBorderView.h */,
+				799189E210D0AA4800B4002A /* STBorderView.m */,
+				7901210A10D5D52F005F6B20 /* STTableViewTextView.h */,
+				7901210B10D5D52F005F6B20 /* STTableViewTextView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -207,6 +219,8 @@
 				7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */,
 				796665B110856788007992BB /* NSDictionaryAdditions.h in Headers */,
 				796665B51085705E007992BB /* NSSetAdditions.h in Headers */,
+				799189E310D0AA4800B4002A /* STBorderView.h in Headers */,
+				7901210C10D5D52F005F6B20 /* STTableViewTextView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +283,8 @@
 				7961909A107EC3CD000937C1 /* STImageView.m in Sources */,
 				796665B210856788007992BB /* NSDictionaryAdditions.m in Sources */,
 				796665B61085705E007992BB /* NSSetAdditions.m in Sources */,
+				799189E410D0AA4800B4002A /* STBorderView.m in Sources */,
+				7901210D10D5D52F005F6B20 /* STTableViewTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

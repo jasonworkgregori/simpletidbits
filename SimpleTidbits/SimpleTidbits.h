@@ -41,3 +41,5 @@
 #import "STSimpleURLConnection.h"
 #import "STFileCache.h"
 #import "STImageView.h"
+#import "STBorderView.h"
+#import "STTableViewTextView.h"

@@ -53,11 +53,14 @@
 	
 	for (id object in self)
 	{
-		if (!firstItem)
+		if (firstItem)
 		{
-			[form appendString:@"&"];
 			firstItem		= NO;
 		}
+        else
+        {
+            [form appendString:@"&"];
+        }
 		
 		if ([object isKindOfClass:[NSArray class]]
 			|| [object isKindOfClass:[NSSet class]])
