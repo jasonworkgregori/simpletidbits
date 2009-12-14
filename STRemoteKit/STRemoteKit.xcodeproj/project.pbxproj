@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79037C4410D209EE00C28604 /* STRemoteData.h in Headers */ = {isa = PBXBuildFile; fileRef = 79037C3C10D209EE00C28604 /* STRemoteData.h */; };
+		79037C4510D209EE00C28604 /* STRemoteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 79037C3D10D209EE00C28604 /* STRemoteData.m */; };
+		79037C4610D209EE00C28604 /* STRemoteUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 79037C3E10D209EE00C28604 /* STRemoteUser.h */; };
+		79037C4710D209EE00C28604 /* STRemoteUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 79037C3F10D209EE00C28604 /* STRemoteUser.m */; };
+		79037C4810D209EE00C28604 /* STRemoteLoginControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 79037C4010D209EE00C28604 /* STRemoteLoginControllerProtocol.h */; };
+		79037C4910D209EE00C28604 /* STRemoteSignUpControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 79037C4110D209EE00C28604 /* STRemoteSignUpControllerProtocol.h */; };
+		79037C4A10D209EE00C28604 /* STRemoteLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79037C4210D209EE00C28604 /* STRemoteLoginViewController.h */; };
+		79037C4B10D209EE00C28604 /* STRemoteLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79037C4310D209EE00C28604 /* STRemoteLoginViewController.m */; };
+		79037C5010D209FA00C28604 /* STRemoteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 79037C4E10D209FA00C28604 /* STRemoteKit.h */; };
+		79037C6010D20A2A00C28604 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79037C5F10D20A2A00C28604 /* QuartzCore.framework */; };
+		79037C9610D20A7A00C28604 /* libSTMenuKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79037C5B10D20A1000C28604 /* libSTMenuKit.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		79037C9710D20A7D00C28604 /* libSimpleTidbits.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79037C5E10D20A1000C28604 /* libSimpleTidbits.a */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AA747D9F0F9514B9006C5449 /* STRemoteKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* STRemoteKit_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79037C5A10D20A1000C28604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79037C5310D20A1000C28604 /* STMenuKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = STMenuKit;
+		};
+		79037C5D10D20A1000C28604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79037C5610D20A1000C28604 /* SimpleTidbits.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = SimpleTidbits;
+		};
+		79037CA210D20A9200C28604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79037C5310D20A1000C28604 /* STMenuKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = STMenuKit;
+		};
+		79037CA410D20A9200C28604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79037C5610D20A1000C28604 /* SimpleTidbits.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = SimpleTidbits;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79037C3C10D209EE00C28604 /* STRemoteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteData.h; sourceTree = "<group>"; };
+		79037C3D10D209EE00C28604 /* STRemoteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRemoteData.m; sourceTree = "<group>"; };
+		79037C3E10D209EE00C28604 /* STRemoteUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteUser.h; sourceTree = "<group>"; };
+		79037C3F10D209EE00C28604 /* STRemoteUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRemoteUser.m; sourceTree = "<group>"; };
+		79037C4010D209EE00C28604 /* STRemoteLoginControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteLoginControllerProtocol.h; sourceTree = "<group>"; };
+		79037C4110D209EE00C28604 /* STRemoteSignUpControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteSignUpControllerProtocol.h; sourceTree = "<group>"; };
+		79037C4210D209EE00C28604 /* STRemoteLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteLoginViewController.h; sourceTree = "<group>"; };
+		79037C4310D209EE00C28604 /* STRemoteLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRemoteLoginViewController.m; sourceTree = "<group>"; };
+		79037C4E10D209FA00C28604 /* STRemoteKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteKit.h; sourceTree = "<group>"; };
+		79037C4F10D209FA00C28604 /* STRemoteKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = STRemoteKit.bundle; sourceTree = "<group>"; };
+		79037C5310D20A1000C28604 /* STMenuKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STMenuKit.xcodeproj; path = ../STMenuKit/STMenuKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		79037C5610D20A1000C28604 /* SimpleTidbits.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimpleTidbits.xcodeproj; path = ../SimpleTidbits/SimpleTidbits.xcodeproj; sourceTree = SOURCE_ROOT; };
+		79037C5F10D20A2A00C28604 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		AA747D9E0F9514B9006C5449 /* STRemoteKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRemoteKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libSTRemoteKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTRemoteKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				79037C6010D20A2A00C28604 /* QuartzCore.framework in Frameworks */,
+				79037C9610D20A7A00C28604 /* libSTMenuKit.a in Frameworks */,
+				79037C9710D20A7D00C28604 /* libSimpleTidbits.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libSTRemoteKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* STRemoteKit */ = {
+			isa = PBXGroup;
+			children = (
+				79037C4E10D209FA00C28604 /* STRemoteKit.h */,
+				79037C4F10D209FA00C28604 /* STRemoteKit.bundle */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = STRemoteKit;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79037C5310D20A1000C28604 /* STMenuKit.xcodeproj */,
+				79037C5610D20A1000C28604 /* SimpleTidbits.xcodeproj */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				79037C5F10D20A2A00C28604 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				79037C3C10D209EE00C28604 /* STRemoteData.h */,
+				79037C3D10D209EE00C28604 /* STRemoteData.m */,
+				79037C3E10D209EE00C28604 /* STRemoteUser.h */,
+				79037C3F10D209EE00C28604 /* STRemoteUser.m */,
+				79037C4010D209EE00C28604 /* STRemoteLoginControllerProtocol.h */,
+				79037C4110D209EE00C28604 /* STRemoteSignUpControllerProtocol.h */,
+				79037C4210D209EE00C28604 /* STRemoteLoginViewController.h */,
+				79037C4310D209EE00C28604 /* STRemoteLoginViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* STRemoteKit_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		79037C5410D20A1000C28604 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79037C5B10D20A1000C28604 /* libSTMenuKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79037C5710D20A1000C28604 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79037C5E10D20A1000C28604 /* libSimpleTidbits.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* STRemoteKit_Prefix.pch in Headers */,
+				79037C4410D209EE00C28604 /* STRemoteData.h in Headers */,
+				79037C4610D209EE00C28604 /* STRemoteUser.h in Headers */,
+				79037C4810D209EE00C28604 /* STRemoteLoginControllerProtocol.h in Headers */,
+				79037C4910D209EE00C28604 /* STRemoteSignUpControllerProtocol.h in Headers */,
+				79037C4A10D209EE00C28604 /* STRemoteLoginViewController.h in Headers */,
+				79037C5010D209FA00C28604 /* STRemoteKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* STRemoteKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "STRemoteKit" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79037CA310D20A9200C28604 /* PBXTargetDependency */,
+				79037CA510D20A9200C28604 /* PBXTargetDependency */,
+			);
+			name = STRemoteKit;
+			productName = STRemoteKit;
+			productReference = D2AAC07E0554694100DB518D /* libSTRemoteKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "STRemoteKit" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* STRemoteKit */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 79037C5710D20A1000C28604 /* Products */;
+					ProjectRef = 79037C5610D20A1000C28604 /* SimpleTidbits.xcodeproj */;
+				},
+				{
+					ProductGroup = 79037C5410D20A1000C28604 /* Products */;
+					ProjectRef = 79037C5310D20A1000C28604 /* STMenuKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* STRemoteKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		79037C5B10D20A1000C28604 /* libSTMenuKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSTMenuKit.a;
+			remoteRef = 79037C5A10D20A1000C28604 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		79037C5E10D20A1000C28604 /* libSimpleTidbits.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSimpleTidbits.a;
+			remoteRef = 79037C5D10D20A1000C28604 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79037C4510D209EE00C28604 /* STRemoteData.m in Sources */,
+				79037C4710D209EE00C28604 /* STRemoteUser.m in Sources */,
+				79037C4B10D209EE00C28604 /* STRemoteLoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79037CA310D20A9200C28604 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = STMenuKit;
+			targetProxy = 79037CA210D20A9200C28604 /* PBXContainerItemProxy */;
+		};
+		79037CA510D20A9200C28604 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SimpleTidbits;
+			targetProxy = 79037CA410D20A9200C28604 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/STRemoteKit.dst;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = STRemoteKit_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = STRemoteKit;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/STRemoteKit.dst;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = STRemoteKit_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = STRemoteKit;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ..;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "STRemoteKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "STRemoteKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
