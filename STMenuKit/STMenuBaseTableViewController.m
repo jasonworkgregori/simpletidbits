@@ -230,12 +230,12 @@
 #pragma mark -
 #pragma mark UIViewController
 
-- (void)loadView
+- (void)viewDidLoad
 {
-    [super loadView];
+    [super viewDidLoad];
     
     // got to set loading correctly
-    [self setLoading:self.loading];
+    [self setLoading:self.loading];    
 }
 
 - (void)didReceiveMemoryWarning
