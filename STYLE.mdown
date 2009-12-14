@@ -37,7 +37,9 @@ Methods should start with the prefix 'st_'. This is to avoid method name collisi
 Classes
 -------
 
-*   All class member variables should start with a leading underscore.
+*   All class member variables should start with a leading underscore and accessed through properties both outside and inside the class.
 *   Use @protected for variables that should be accessible to subclasses.
 *   Create public and private properties to access member variables where applicable. Do not access member variables directly except for in your `init`, `dealloc`, `getter`, and `setter`.
 *   Private methods that must be put in the public implementation (maybe for subclasses to override) should start with the prefix 'st_'. This tells other classes this is a private method and should not be called.
+*   Private methods in the private interface should also be prefixed with 'st_'. This is so other subclasses won't accidentally override a private method.
+*   Private properties should be prefixed with 'st_' as well for the same reason.

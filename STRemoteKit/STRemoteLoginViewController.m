@@ -9,11 +9,11 @@
 #import "STRemoteLoginViewController.h"
 
 @interface STRemoteLoginViewController ()
-@property (nonatomic, retain)   UIBarButtonItem *cancelButton;
-@property (nonatomic, retain)   STBorderView    *loginButton;
-@property (nonatomic, retain)   UIBarButtonItem *signUpButton;
+@property (nonatomic, retain)   UIBarButtonItem *st_cancelButton;
+@property (nonatomic, retain)   STBorderView    *st_loginButton;
+@property (nonatomic, retain)   UIBarButtonItem *st_signUpButton;
 
-@property (nonatomic, retain)   STTableViewTextView *messageView;
+@property (nonatomic, retain)   STTableViewTextView *st_messageView;
 
 @end
 
@@ -21,8 +21,8 @@
 @implementation STRemoteLoginViewController
 @synthesize delegate = _delegate, cancelButtonHidden = _cancelButtonHidden,
             signUpButtonHidden = _signUpButtonHidden,
-            cancelButton = _cancelButton, loginButton = _loginButton,
-            signUpButton = _signUpButton, messageView = _messageView;
+            st_cancelButton = _cancelButton, st_loginButton = _loginButton,
+            st_signUpButton = _signUpButton, st_messageView = _messageView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,7 +42,7 @@
         STBorderView    *view   = [[STBorderView alloc]
                                    initWithFrame:CGRectMake(0, 0, 320, 64)];
         view.contentView        = button;
-        self.loginButton        = view;
+        self.st_loginButton        = view;
         [view release];
         
         // set default options
@@ -92,7 +92,7 @@
 - (void)setCancelButtonHidden:(BOOL)hidden animated:(BOOL)animated
 {
     _cancelButtonHidden = hidden;
-    if (!_cancelButtonHidden && !self.cancelButton)
+    if (!_cancelButtonHidden && !self.st_cancelButton)
     {
         // if we should show the cancel button, but it does not exist
         UIBarButtonItem *button = [[UIBarButtonItem alloc]
@@ -100,17 +100,17 @@
                                    UIBarButtonSystemItemCancel
                                    target:self
                                    action:@selector(cancel)];
-        self.cancelButton   = button;
+        self.st_cancelButton   = button;
         [button release];
-        [self.navigationItem setLeftBarButtonItem:self.cancelButton
+        [self.navigationItem setLeftBarButtonItem:self.st_cancelButton
                                          animated:animated];
     }
-    else if (_cancelButtonHidden && self.cancelButton)
+    else if (_cancelButtonHidden && self.st_cancelButton)
     {
         // if the cancel button should hide and it exists
         [self.navigationItem setLeftBarButtonItem:nil
                                          animated:animated];
-        self.cancelButton   = nil;
+        self.st_cancelButton   = nil;
     }
 }
 
@@ -122,23 +122,23 @@
 - (void)setSignUpButtonHidden:(BOOL)hidden animated:(BOOL)animated
 {
     _signUpButtonHidden = hidden;
-    if (!_signUpButtonHidden && !self.signUpButton)
+    if (!_signUpButtonHidden && !self.st_signUpButton)
     {
         UIBarButtonItem *button = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Sign Up"
                                    style:UIBarButtonItemStyleBordered
                                    target:self
                                    action:@selector(signUp)];
-        self.signUpButton   = button;
+        self.st_signUpButton   = button;
         [button release];
-        [self.navigationItem setRightBarButtonItem:self.signUpButton
+        [self.navigationItem setRightBarButtonItem:self.st_signUpButton
                                           animated:animated];
     }
-    else if (_signUpButtonHidden && self.signUpButton)
+    else if (_signUpButtonHidden && self.st_signUpButton)
     {
         [self.navigationItem setRightBarButtonItem:nil
                                           animated:animated];
-        self.signUpButton   = nil;
+        self.st_signUpButton   = nil;
     }
 }
 
@@ -146,30 +146,30 @@
 
 - (NSString *)message
 {
-    return self.messageView.text;
+    return self.st_messageView.text;
 }
 
 - (void)setMessage:(NSString *)message
 {
-    if (message && !self.messageView)
+    if (message && !self.st_messageView)
     {
         STTableViewTextView *textView   = [[STTableViewTextView alloc]
                                            init];
         textView.margins    = UIEdgeInsetsMake(10, 10, 0, 10);
-        self.messageView    = textView;
+        self.st_messageView    = textView;
         [textView release];
     }
-    else if (!message && self.messageView)
+    else if (!message && self.st_messageView)
     {
-        self.messageView    = nil;
+        self.st_messageView    = nil;
     }
     
     // set message text
-    self.messageView.text   = message;
+    self.st_messageView.text   = message;
     if ([self isViewLoaded])
     {
         // show/hide message view
-        self.tableView.tableHeaderView  = self.messageView;
+        self.tableView.tableHeaderView  = self.st_messageView;
     }
 }
 
@@ -194,8 +194,8 @@
 {
     [super setLoading:loading animated:animated];
     
-    self.signUpButton.enabled   = !loading;
-    self.cancelButton.enabled   = !loading;
+    self.st_signUpButton.enabled   = !loading;
+    self.st_cancelButton.enabled   = !loading;
 }
 
 #pragma mark UIViewController
@@ -204,8 +204,8 @@
 {
     [super loadView];
     
-    self.tableView.tableHeaderView  = self.messageView;
-    self.tableView.tableFooterView  = self.loginButton;
+    self.tableView.tableHeaderView  = self.st_messageView;
+    self.tableView.tableFooterView  = self.st_loginButton;
 }
 
 @end
