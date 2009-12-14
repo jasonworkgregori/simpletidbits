@@ -34,7 +34,7 @@
 #import "NSDateAdditions.h"
 #import "NSDictionaryAdditions.h"
 #import "NSSetAdditions.h"
-
+#import "UINavigationControllerAdditions.h"
 
 // Classes
 #import "STNetworkIndicator.h"

@@ -37,6 +37,8 @@
 		7979A56F1080519F00A31539 /* SimpleTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = 7979A56E1080519F00A31539 /* SimpleTidbits.h */; };
 		799189E310D0AA4800B4002A /* STBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 799189E110D0AA4800B4002A /* STBorderView.h */; };
 		799189E410D0AA4800B4002A /* STBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 799189E210D0AA4800B4002A /* STBorderView.m */; };
+		79A158DC10D6131400CCA5D1 /* UINavigationControllerAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A158DA10D6131400CCA5D1 /* UINavigationControllerAdditions.h */; };
+		79A158DD10D6131400CCA5D1 /* UINavigationControllerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A158DB10D6131400CCA5D1 /* UINavigationControllerAdditions.m */; };
 		79A5DADA106ED8FD00891E58 /* UIViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */; };
 		79A5DADB106ED8FD00891E58 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */; };
 		79BF1FDC1072E805003FBD85 /* STSimpleURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */; };
@@ -80,6 +82,8 @@
 		7979A56E1080519F00A31539 /* SimpleTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTidbits.h; sourceTree = "<group>"; };
 		799189E110D0AA4800B4002A /* STBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STBorderView.h; sourceTree = "<group>"; };
 		799189E210D0AA4800B4002A /* STBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STBorderView.m; sourceTree = "<group>"; };
+		79A158DA10D6131400CCA5D1 /* UINavigationControllerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavigationControllerAdditions.h; sourceTree = "<group>"; };
+		79A158DB10D6131400CCA5D1 /* UINavigationControllerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavigationControllerAdditions.m; sourceTree = "<group>"; };
 		79A5DAD8106ED8FD00891E58 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAdditions.h; sourceTree = "<group>"; };
 		79A5DAD9106ED8FD00891E58 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAdditions.m; sourceTree = "<group>"; };
 		79BF1FDA1072E805003FBD85 /* STSimpleURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimpleURLConnection.h; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				796665B010856788007992BB /* NSDictionaryAdditions.m */,
 				796665B31085705E007992BB /* NSSetAdditions.h */,
 				796665B41085705E007992BB /* NSSetAdditions.m */,
+				79A158DA10D6131400CCA5D1 /* UINavigationControllerAdditions.h */,
+				79A158DB10D6131400CCA5D1 /* UINavigationControllerAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 				796665B51085705E007992BB /* NSSetAdditions.h in Headers */,
 				799189E310D0AA4800B4002A /* STBorderView.h in Headers */,
 				7901210C10D5D52F005F6B20 /* STTableViewTextView.h in Headers */,
+				79A158DC10D6131400CCA5D1 /* UINavigationControllerAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +292,7 @@
 				796665B61085705E007992BB /* NSSetAdditions.m in Sources */,
 				799189E410D0AA4800B4002A /* STBorderView.m in Sources */,
 				7901210D10D5D52F005F6B20 /* STTableViewTextView.m in Sources */,
+				79A158DD10D6131400CCA5D1 /* UINavigationControllerAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
