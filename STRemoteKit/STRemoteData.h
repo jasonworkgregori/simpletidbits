@@ -79,9 +79,9 @@
 	NSDictionary			*_requestDictionary;
 	// BOOL					_multipart;
 	
-	NSUInteger	_statusCode;
-	id			_responseData;
-	NSString	*_errorMessage;
+	NSInteger   _statusCode;
+	id          _responseData;
+	NSString    *_errorMessage;
 }
 // Whether to use authentication or not, defaults to YES
 @property (nonatomic, assign)	BOOL	authenticated;
@@ -107,9 +107,9 @@
 //@property (nonatomic, assign)	BOOL	multipart;
 
 // Response
-@property (nonatomic, assign, readonly)	NSUInteger		statusCode;
-@property (nonatomic, retain, readonly)	id				responseData;
-@property (nonatomic, retain, readonly)	NSString		*errorMessage;
+@property (nonatomic, assign, readonly)	NSInteger       statusCode;
+@property (nonatomic, retain, readonly)	id              responseData;
+@property (nonatomic, retain, readonly)	NSString        *errorMessage;
 
 // convenience init for setting a string url, otherwise you init and manually
 // set the NSURL for the request. Returns nil on bad url.
@@ -136,7 +136,7 @@
 // If there is a URLConnection failure, will not be called.
 // Called when we get a response, subclass is responsible for parsing.
 // Do NOT call super (just throws an exception)
-- (void)st_handleResponse:(NSURLResponse *)httpResponse;
+- (void)st_handleResponse:(NSURLResponse *)httpResponse data:(NSData *)data;
 
 #pragma mark For Subclass Use Only
 /*
@@ -147,7 +147,7 @@
  */
 - (void)st_parsedResponseOK:(BOOL)OK
                unauthorized:(BOOL)unauthorized
-                 statusCode:(NSUInteger)statusCode
+                 statusCode:(NSInteger)statusCode
                responseData:(id)responseData
                errorMessage:(NSString *)errorMessage;
 

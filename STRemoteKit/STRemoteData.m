@@ -16,9 +16,9 @@
 @property (nonatomic, retain)   STSimpleURLConnection   *connection;
 
 // Response
-@property (nonatomic, assign)	NSUInteger		statusCode;
-@property (nonatomic, retain)	id				responseData;
-@property (nonatomic, retain)	NSString		*errorMessage;
+@property (nonatomic, assign)	NSInteger       statusCode;
+@property (nonatomic, retain)	id              responseData;
+@property (nonatomic, retain)	NSString        *errorMessage;
 
 - (void)st_transformRequestDictionaryToHTTPData;
 
@@ -177,7 +177,7 @@ static CGFloat	st_STRemoteTimeoutInterval	= 10;
 // STRemoteData will not call delegate.
 - (void)st_parsedResponseOK:(BOOL)OK
                unauthorized:(BOOL)unauthorized
-                 statusCode:(NSUInteger)statusCode
+                 statusCode:(NSInteger)statusCode
                responseData:(id)responseData
                errorMessage:(NSString *)errorMessage
 {
@@ -224,7 +224,7 @@ static CGFloat	st_STRemoteTimeoutInterval	= 10;
 // Overriding Required.
 // If there is a URLConnection failure, will not be called.
 // Called when we get a response, subclass is responsible for parsing
-- (void)st_handleResponse:(NSURLResponse *)httpResponse
+- (void)st_handleResponse:(NSURLResponse *)httpResponse data:(NSData *)data
 {
 	// should never be called because subclass should override
 	[NSException
@@ -257,10 +257,12 @@ static CGFloat	st_STRemoteTimeoutInterval	= 10;
 
 - (void)simpleURLConnectionDidFinishLoading:(STSimpleURLConnection *)connection
 {
+    [connection retain];
+    self.connection = nil;
     [[STNetworkIndicator sharedNetworkIndicator]
      decrementNetworkUsageForNamespace:self.networkNamespace];
-    [self st_handleResponse:connection.response];
-     self.connection = nil;
+    [self st_handleResponse:connection.response data:connection.data];
+    [connection release];
 }
 
 - (void)simpleURLConnection:(STSimpleURLConnection *)connection
