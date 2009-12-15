@@ -17,13 +17,16 @@
 @property (nonatomic, retain)   UIViewController <STMenuProtocol>   *st_subMenu;
 @property (nonatomic, retain)   NSMutableDictionary     *st_cachedMenus;
 
+@property (nonatomic, retain)   STLoadingView   *loadingView;
+
 @end
 
 
 @implementation STMenuBaseTableViewController
 @synthesize value = _value, key = _key, st_plistName = _plistName,
             st_schema = _schema, parentMenuShouldSave = _parentMenuShouldSave,
-            st_subMenu = _subMenu, st_cachedMenus = _cachedMenus;
+            st_subMenu = _subMenu, st_cachedMenus = _cachedMenus,
+            loadingMessage = _loadingMessage, loadingView = _loadingView;
 
 
 // create an instance of a menu
@@ -178,8 +181,39 @@
 - (void)setLoading:(BOOL)loading animated:(BOOL)animated
 {
     _loading    = loading;
+        
+    if (![self isViewLoaded])
+    {
+        // dont load the view on accident
+        return;
+    }
     
     self.view.userInteractionEnabled    = !loading;
+    
+    if (loading && !self.loadingView)
+    {
+        self.loadingView    = [[[STLoadingView alloc] init] autorelease];
+        self.loadingView.text   = self.loadingMessage;
+        self.loadingView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+        self.loadingView.center
+          = CGPointMake(floor(self.view.frame.size.width/2.0),
+                        floor(self.tableView.contentOffset.y
+                              + self.view.frame.size.height/2.0));
+        self.loadingView.alpha  = 0;
+        [UIView beginAnimations:nil context:NULL];
+        [self.view addSubview:self.loadingView];
+        self.loadingView.alpha  = 1;
+        [UIView commitAnimations];
+    }
+    else if (!loading && self.loadingView)
+    {
+        [UIView beginAnimations:nil context:NULL];
+        // ???: Does this look right?
+        self.loadingView.alpha  = 0;
+        [self.loadingView removeFromSuperview];
+        [UIView commitAnimations];
+        self.loadingView    = nil;
+    }
 }
 
 // This is called when a menu is reused. Reset all editable properties.
@@ -230,9 +264,9 @@
 #pragma mark -
 #pragma mark UIViewController
 
-- (void)loadView
+- (void)viewDidLoad
 {
-    [super loadView];
+    [super viewDidLoad];
     
     // got to set loading correctly
     [self setLoading:self.loading];

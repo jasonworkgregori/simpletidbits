@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "STMenuProtocol.h"
+#import "STLoadingView.h"
 
 @class STMenuTableViewCell;
 
@@ -22,6 +23,8 @@
     id              _schema;
     id              _value;
     BOOL            _loading;
+    NSString        *_loadingMessage;
+    STLoadingView   *_loadingView;
     
     NSString        *_key;
     BOOL            _parentMenuShouldSave;

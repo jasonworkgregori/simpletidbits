@@ -26,6 +26,7 @@
 // When a menu is loading, it should stop the user from accessing anything and
 // display some kind of ui so the user knows what's going on.
 @property (nonatomic, assign)   BOOL        loading;
+@property (nonatomic, copy)     NSString    *loadingMessage;
 
 - (void)setPlist:(id)plist andValue:(id)value;
 

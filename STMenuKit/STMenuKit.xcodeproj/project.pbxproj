@@ -34,6 +34,9 @@
 		79EABFC410AD1DFE004DF974 /* STMenuBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EABFC210AD1DFE004DF974 /* STMenuBaseTableViewController.m */; };
 		79EABFD610AD2272004DF974 /* STMenuFormattedTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79EABFD410AD2272004DF974 /* STMenuFormattedTableViewController.h */; };
 		79EABFD710AD2272004DF974 /* STMenuFormattedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EABFD510AD2272004DF974 /* STMenuFormattedTableViewController.m */; };
+		79F010E610D7329300CFDBD6 /* STLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 79F010E410D7329300CFDBD6 /* STLoadingView.h */; };
+		79F010E710D7329300CFDBD6 /* STLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F010E510D7329300CFDBD6 /* STLoadingView.m */; };
+		79F010F210D732AE00CFDBD6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F010F110D732AE00CFDBD6 /* QuartzCore.framework */; };
 		AA747D9F0F9514B9006C5449 /* STMenuKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* STMenuKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		79EABFC210AD1DFE004DF974 /* STMenuBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuBaseTableViewController.m; sourceTree = "<group>"; };
 		79EABFD410AD2272004DF974 /* STMenuFormattedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuFormattedTableViewController.h; sourceTree = "<group>"; };
 		79EABFD510AD2272004DF974 /* STMenuFormattedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuFormattedTableViewController.m; sourceTree = "<group>"; };
+		79F010E410D7329300CFDBD6 /* STLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLoadingView.h; sourceTree = "<group>"; };
+		79F010E510D7329300CFDBD6 /* STLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoadingView.m; sourceTree = "<group>"; };
+		79F010F110D732AE00CFDBD6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AA747D9E0F9514B9006C5449 /* STMenuKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSTMenuKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTMenuKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +84,7 @@
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 				79B304A810A7A6BB00CE423D /* UIKit.framework in Frameworks */,
+				79F010F210D732AE00CFDBD6 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +110,7 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				79F010F110D732AE00CFDBD6 /* QuartzCore.framework */,
 			);
 			name = STMenuKit;
 			sourceTree = "<group>";
@@ -134,6 +142,8 @@
 				79312D6910BA400C00479D69 /* STMenuBasicSectionController.m */,
 				79312D3710BA029B00479D69 /* STMenuBasicTableViewController.h */,
 				79312D3810BA029B00479D69 /* STMenuBasicTableViewController.m */,
+				79F010E410D7329300CFDBD6 /* STLoadingView.h */,
+				79F010E510D7329300CFDBD6 /* STLoadingView.m */,
 			);
 			name = Basics;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 				799F707D10C8C5150055C744 /* STMenuFormTableViewController.h in Headers */,
 				799F708110C8C8D80055C744 /* STMenuFormTableViewCell.h in Headers */,
 				794C780F10CA17AF00717975 /* STMenuTextFieldTableViewCell.h in Headers */,
+				79F010E610D7329300CFDBD6 /* STLoadingView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +268,7 @@
 				799F707E10C8C5150055C744 /* STMenuFormTableViewController.m in Sources */,
 				799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */,
 				794C781010CA17AF00717975 /* STMenuTextFieldTableViewCell.m in Sources */,
+				79F010E710D7329300CFDBD6 /* STLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
