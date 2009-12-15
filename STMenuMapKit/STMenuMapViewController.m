@@ -8,12 +8,23 @@
 
 #import "STMenuMapViewController.h"
 
+//#pragma mark Notifications
+//NSString *const STMenuMapDidStartLoadingUserLocationNotification
+//  = @"STMenuMapDidStartLoadingUserLocationNotification";
+//NSString *const STMenuMapDidStartTrackingUserNotification
+//  = @"STMenuMapDidStartTrackingUserNotification";
+//NSString *const STMenuMapDidStopTrackingUserNotification
+//  = @"STMenuMapDidStopTrackingUserNotification";
+
 @interface STMenuMapViewController ()
+
+@property (nonatomic, assign)	BOOL		st_shouldLocateUserWhenLoaded;
 
 @end
 
 @implementation STMenuMapViewController
-@synthesize	mapType = _mapType, st_mapView = _mapView;
+@synthesize	mapType = _mapType, st_mapView = _mapView,
+			st_shouldLocateUserWhenLoaded = _shouldLocateUserWhenLoaded;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -81,6 +92,68 @@
     return [NSNumber numberWithBool:_tracksUser];
 }
 
+// Centers Map on User, only if showsUserLocation is YES
+- (void)locateUser
+{
+    if (![self.showsUserLocation boolValue])
+    {
+        // dont allow if they aren't showing the user location
+        return;
+    }
+    
+    if ([self isViewLoaded])
+    {
+        MKUserLocation	*userLocation	= self.st_mapView.userLocation;
+        
+        // check if we have the location
+        if (!userLocation.location)
+        {
+            // there is no location, check if it is being loaded
+            if (userLocation.updating)
+            {
+                // poll!!!!
+                [self performSelector:@selector(locateUser)
+                           withObject:nil
+                           afterDelay:0.25];
+                return;
+            }
+        }
+            
+        if (self.st_mapView.region.span.latitudeDelta > 1)
+        {
+            // zoom in because they are so far out
+            MKCoordinateRegion	region;
+            region.center	= userLocation.location.coordinate;
+            // we don't want to zoom in more than the accuracy
+            region.span.latitudeDelta
+              = userLocation.location.horizontalAccuracy /1000 /111;
+            if (region.span.latitudeDelta < 0.015)
+            {
+                // we don't want to zoom in more than a mile
+                region.span.latitudeDelta	= 0.015;
+            }
+            // make sure region fits map
+			region		= [self.st_mapView regionThatFits:region];
+            [self.st_mapView setRegion:region
+                              animated:YES];
+        }
+        else
+        {
+            // they are already zoomed in, so dont change zoom
+            // just center on their location
+            [self.st_mapView
+             setCenterCoordinate:userLocation.location.coordinate
+             animated:YES];
+        }
+
+        self.st_shouldLocateUserWhenLoaded	= NO;
+    }
+    else
+    {
+        self.st_shouldLocateUserWhenLoaded	= YES;
+    }
+}
+
 #pragma mark UIViewController
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
@@ -108,6 +181,11 @@
     self.mapType	= self.mapType;
 	self.showsUserLocation	= self.showsUserLocation;
 	self.tracksUser	= self.tracksUser;
+    
+    if (self.st_shouldLocateUserWhenLoaded)
+    {
+        [self locateUser];
+    }
 }
 
 

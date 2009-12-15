@@ -22,14 +22,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = F728F44910D7EFB9005B527A /* STMenuKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libSTMenuKit.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = STMenuKit;
 		};
 		F728F45110D7EFE2005B527A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F728F44910D7EFB9005B527A /* STMenuKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* STMenuKit */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = STMenuKit;
 		};
 /* End PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 		AA747D9E0F9514B9006C5449 /* STMenuMapKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuMapKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSTMenuMapKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTMenuMapKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F708016F10D83731007BAE6E /* STMenuMapKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = STMenuMapKit.bundle; sourceTree = "<group>"; };
 		F728F43B10D7EF80005B527A /* STMenuMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuMapKit.h; sourceTree = "<group>"; };
 		F728F44910D7EFB9005B527A /* STMenuKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = STMenuKit.xcodeproj; path = ../STMenuKit/STMenuKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		F728F45910D7F01C005B527A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -73,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				F728F43B10D7EF80005B527A /* STMenuMapKit.h */,
+				F708016F10D83731007BAE6E /* STMenuMapKit.bundle */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
