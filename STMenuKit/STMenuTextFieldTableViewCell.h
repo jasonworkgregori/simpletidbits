@@ -26,4 +26,23 @@
 }
 @property (nonatomic, retain, readonly) UITextField *textField;
 
+// TextInputTraits, these all return nil, they are setonly
+
+// Options: none, words, sentences, allCharacters
+// Default: none
+@property (nonatomic, copy) NSString    *autocapitalizationType;
+// Options: default, no, yes
+// Default: default
+@property (nonatomic, copy) NSString    *autocorrectionType;
+// BOOL
+// Default: NO
+@property (nonatomic, retain)   NSNumber    *enablesReturnKeyAutomatically;
+// Options: default, asciiCapable, numbersAndPunctuation, url, numberPad,
+//          phonePad, emailAddress
+// Default: default
+@property (nonatomic, copy) NSString    *keyboardType;
+// BOOL
+// Default: NO
+@property (nonatomic, retain)   NSNumber    *secureTextEntry;
+
 @end

@@ -46,6 +46,7 @@
         _textField.textColor    = self.detailTextLabel.textColor;
         _textField.adjustsFontSizeToFitWidth    = YES;
         _textField.minimumFontSize  = 13;
+        _textField.autocapitalizationType   = UITextAutocapitalizationTypeNone;
         _textField.returnKeyType= UIReturnKeyDefault;
         [self.contentView addSubview:_textField];
         
@@ -82,6 +83,121 @@
 - (void)st_textFieldValueDidChange
 {
     [self.delegate menuTableViewCell:self didChangeValue:self.textField.text];
+}
+
+#pragma mark Properties
+
+- (void)setAutocapitalizationType:(NSString *)type
+{
+    type        = [type lowercaseString];
+    if ([type isEqualToString:@"sentences"])
+    {
+        self.textField.autocapitalizationType
+          = UITextAutocapitalizationTypeSentences;
+    }
+    else if ([type isEqualToString:@"words"])
+    {
+        self.textField.autocapitalizationType
+          = UITextAutocapitalizationTypeWords;
+    }
+    else if ([type isEqualToString:@"allcharacters"])
+    {
+        self.textField.autocapitalizationType
+          = UITextAutocapitalizationTypeAllCharacters;
+    }
+    else
+    {
+        self.textField.autocapitalizationType
+          = UITextAutocapitalizationTypeNone;
+    }
+}
+
+- (NSString *)autocapitalizationType
+{
+    return nil;
+}
+
+- (void)setAutocorrectionType:(NSString *)type
+{
+    type        = [type lowercaseString];
+    if ([type isEqualToString:@"no"])
+    {
+        self.textField.autocorrectionType
+          = UITextAutocorrectionTypeNo;
+    }
+    else if ([type isEqualToString:@"yes"])
+    {
+        self.textField.autocorrectionType
+          = UITextAutocorrectionTypeYes;
+    }
+    else
+    {
+        self.textField.autocorrectionType
+          = UITextAutocorrectionTypeDefault;
+    }
+}
+
+- (NSString *)autocorrectionType
+{
+    return nil;
+}
+
+- (void)setEnablesReturnKeyAutomatically:(NSNumber *)enables
+{
+    self.textField.enablesReturnKeyAutomatically    = [enables boolValue];
+}
+
+- (NSNumber *)enablesReturnKeyAutomatically
+{
+    return nil;
+}
+
+- (void)setKeyboardType:(NSString *)type
+{
+    type        = [type lowercaseString];
+    if ([type isEqualToString:@"asciicapable"])
+    {
+        self.textField.keyboardType = UIKeyboardTypeASCIICapable;
+    }
+    else if ([type isEqualToString:@"numbersandpunctuation"])
+    {
+        self.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    }
+    else if ([type isEqualToString:@"url"])
+    {
+        self.textField.keyboardType = UIKeyboardTypeURL;
+    }
+    else if ([type isEqualToString:@"numberpad"])
+    {
+        self.textField.keyboardType = UIKeyboardTypeNumberPad;
+    }
+    else if ([type isEqualToString:@"phonepad"])
+    {
+        self.textField.keyboardType = UIKeyboardTypePhonePad;
+    }
+    else if ([type isEqualToString:@"emailaddress"])
+    {
+        self.textField.keyboardType = UIKeyboardTypeEmailAddress;
+    }
+    else
+    {
+        self.textField.keyboardType = UIKeyboardTypeDefault;
+    }
+}
+
+- (NSString *)keyboardType
+{
+    return nil;
+}
+
+- (void)setSecureTextEntry:(NSNumber *)secureTextEntry
+{
+    self.textField.secureTextEntry  = [secureTextEntry boolValue];
+}
+
+- (NSNumber *)secureTextEntry
+{
+    return nil;
 }
 
 #pragma mark STMenuTableViewCell
