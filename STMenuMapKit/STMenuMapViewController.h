@@ -6,8 +6,9 @@
 //  Copyright 2009 Slingshot Labs. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "STMenuBaseViewController.h"
+#import <STMenuKit/STMenuKit.h>
 #import <MapKit/MapKit.h>
 
 

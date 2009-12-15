@@ -36,11 +36,8 @@
 		79EABFD710AD2272004DF974 /* STMenuFormattedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EABFD510AD2272004DF974 /* STMenuFormattedTableViewController.m */; };
 		AA747D9F0F9514B9006C5449 /* STMenuKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* STMenuKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		F728F39210D6B3EA005B527A /* STMenuMapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F728F39010D6B3EA005B527A /* STMenuMapViewController.h */; };
-		F728F39310D6B3EA005B527A /* STMenuMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F39110D6B3EA005B527A /* STMenuMapViewController.m */; };
 		F728F39610D6B452005B527A /* STMenuBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F728F39410D6B452005B527A /* STMenuBaseViewController.h */; };
 		F728F39710D6B452005B527A /* STMenuBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F728F39510D6B452005B527A /* STMenuBaseViewController.m */; };
-		F728F3B410D6D0D1005B527A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F728F3B310D6D0D1005B527A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,11 +71,8 @@
 		AA747D9E0F9514B9006C5449 /* STMenuKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSTMenuKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTMenuKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F728F39010D6B3EA005B527A /* STMenuMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuMapViewController.h; sourceTree = "<group>"; };
-		F728F39110D6B3EA005B527A /* STMenuMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuMapViewController.m; sourceTree = "<group>"; };
 		F728F39410D6B452005B527A /* STMenuBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuBaseViewController.h; sourceTree = "<group>"; };
 		F728F39510D6B452005B527A /* STMenuBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuBaseViewController.m; sourceTree = "<group>"; };
-		F728F3B310D6D0D1005B527A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +82,6 @@
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 				79B304A810A7A6BB00CE423D /* UIKit.framework in Frameworks */,
-				F728F3B410D6D0D1005B527A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,11 +104,9 @@
 				7959030910C615E900DB0F5F /* Edit Menu */,
 				799F707A10C8C48A0055C744 /* Form Menu */,
 				794C778210CA07B400717975 /* More Base Cells */,
-				F728F38F10D6B39A005B527A /* Map */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				F728F3B310D6D0D1005B527A /* MapKit.framework */,
 			);
 			name = STMenuKit;
 			sourceTree = "<group>";
@@ -192,15 +183,6 @@
 			name = "Form Menu";
 			sourceTree = "<group>";
 		};
-		F728F38F10D6B39A005B527A /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				F728F39010D6B3EA005B527A /* STMenuMapViewController.h */,
-				F728F39110D6B3EA005B527A /* STMenuMapViewController.m */,
-			);
-			name = Map;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -223,7 +205,6 @@
 				799F707D10C8C5150055C744 /* STMenuFormTableViewController.h in Headers */,
 				799F708110C8C8D80055C744 /* STMenuFormTableViewCell.h in Headers */,
 				794C780F10CA17AF00717975 /* STMenuTextFieldTableViewCell.h in Headers */,
-				F728F39210D6B3EA005B527A /* STMenuMapViewController.h in Headers */,
 				F728F39610D6B452005B527A /* STMenuBaseViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +264,6 @@
 				799F707E10C8C5150055C744 /* STMenuFormTableViewController.m in Sources */,
 				799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */,
 				794C781010CA17AF00717975 /* STMenuTextFieldTableViewCell.m in Sources */,
-				F728F39310D6B3EA005B527A /* STMenuMapViewController.m in Sources */,
 				F728F39710D6B452005B527A /* STMenuBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

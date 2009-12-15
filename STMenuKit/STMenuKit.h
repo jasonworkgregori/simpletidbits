@@ -7,6 +7,7 @@
 #import "STMenuFormattedTableViewController.h"
 #import "STMenuBasicSectionController.h"
 #import "STMenuBasicTableViewController.h"
+#import "STMenuBaseViewController.h"
 
 // edit menu
 #import "STMenuEditTableViewCell.h"
