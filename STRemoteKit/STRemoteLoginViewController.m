@@ -178,7 +178,12 @@
     [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark STMenuBaseTableViewController
+#pragma mark STMenuProtocol
+
+- (void)done
+{
+    [self login];
+}
 
 - (void)setLoading:(BOOL)loading
 {

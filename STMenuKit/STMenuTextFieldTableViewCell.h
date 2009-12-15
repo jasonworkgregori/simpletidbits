@@ -23,6 +23,8 @@
 <UITextFieldDelegate>
 {
     UITextField     *_textField;
+    NSIndexPath     *_nextCellIndexPath;
+    BOOL            _doneOnReturn;
 }
 @property (nonatomic, retain, readonly) UITextField *textField;
 
@@ -44,5 +46,20 @@
 // BOOL
 // Default: NO
 @property (nonatomic, retain)   NSNumber    *secureTextEntry;
+// Options: default, go, google, join, next, route, search, send, yahoo, done,
+//          emergencyCall
+// Default: default
+@property (nonatomic, copy) NSString    *returnKeyType;
+
+// Other traits
+
+// NSString of the form "section,row" (eg "0,1")
+// When this is set, tapping the return key selects this row
+// Making this non nil also sets returnKeyType to next.
+@property (nonatomic, copy) NSString    *nextCellIndexPath;
+// BOOL
+// When this value is YES, we call menu's done method when the return key is
+// tapped. Default: NO
+@property (nonatomic, retain)   NSNumber    *doneOnReturn;
 
 @end

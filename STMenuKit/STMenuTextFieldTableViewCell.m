@@ -11,7 +11,9 @@
 #define kSTMenuTextFieldMaxWidth    175
 
 @interface STMenuTextFieldTableViewCell ()
-@property (nonatomic, retain) UITextField *textField;
+@property (nonatomic, retain) UITextField   *textField;
+@property (nonatomic, retain) NSIndexPath   *st_nextCellIndexPath;
+@property (nonatomic, assign) BOOL          st_doneOnReturn;
 
 - (void)st_deselectIfNotSelectedCell;
 - (void)st_textFieldValueDidChange;
@@ -20,7 +22,8 @@
 
 
 @implementation STMenuTextFieldTableViewCell
-@synthesize textField = _textField;
+@synthesize textField = _textField, st_nextCellIndexPath = _nextCellIndexPath,
+            st_doneOnReturn = _doneOnReturn;
 
 - (id)initWithStyle:(UITableViewCellStyle)style
     reuseIdentifier:(NSString *)reuseIdentifier
@@ -200,7 +203,109 @@
     return nil;
 }
 
+- (void)setReturnKeyType:(NSString *)type
+{
+    type        = [type lowercaseString];
+    if ([type isEqualToString:@"go"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyGo;
+    }
+    else if ([type isEqualToString:@"google"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyGoogle;
+    }
+    else if ([type isEqualToString:@"join"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyJoin;
+    }
+    else if ([type isEqualToString:@"next"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyNext;
+    }
+    else if ([type isEqualToString:@"route"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyRoute;
+    }
+    else if ([type isEqualToString:@"search"])
+    {
+        self.textField.returnKeyType    = UIReturnKeySearch;
+    }
+    else if ([type isEqualToString:@"send"])
+    {
+        self.textField.returnKeyType    = UIReturnKeySend;
+    }
+    else if ([type isEqualToString:@"yahoo"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyYahoo;
+    }
+    else if ([type isEqualToString:@"done"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyDone;
+    }
+    else if ([type isEqualToString:@"emergencycall"])
+    {
+        self.textField.returnKeyType    = UIReturnKeyEmergencyCall;
+    }
+    else
+    {
+        self.textField.returnKeyType    = UIReturnKeyDefault;
+    }
+}
+
+- (NSString *)returnKeyType
+{
+    return nil;
+}
+
+- (void)setNextCellIndexPath:(NSString *)indexPathString
+{
+    if (indexPathString)
+    {
+        NSArray     *components     = [indexPathString
+                                       componentsSeparatedByString:@","];
+        self.st_nextCellIndexPath
+          = [NSIndexPath
+             indexPathForRow:[[components objectAtIndex:1] integerValue]
+             inSection:[[components objectAtIndex:0] integerValue]];
+        self.textField.returnKeyType    = UIReturnKeyNext;
+    }
+    else
+    {
+        self.st_nextCellIndexPath   = nil;
+    }
+}
+
+- (NSString *)nextCellIndexPath
+{
+    return nil;
+}
+
+- (void)setDoneOnReturn:(NSNumber *)done
+{
+    self.st_doneOnReturn   = [done boolValue];
+}
+
+- (NSNumber *)doneOnReturn
+{
+    return nil;
+}
+
 #pragma mark STMenuTableViewCell
+
+- (void)st_prepareForReuse
+{
+    [super st_prepareForReuse];
+    
+    // reset all text attributes
+    self.autocapitalizationType = nil;
+    self.autocorrectionType     = nil;
+    self.enablesReturnKeyAutomatically  = nil;
+    self.keyboardType           = nil;
+    self.secureTextEntry        = nil;
+    
+    self.nextCellIndexPath      = nil;
+    self.doneOnReturn           = nil;
+}
 
 - (void)setTitle:(NSString *)title
 {
@@ -293,10 +398,27 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    // end editing, deselect cell
-    [self.menu.tableView
-     deselectRowAtIndexPath:[self.menu.tableView indexPathForCell:self]
-     animated:NO];
+    if (self.st_nextCellIndexPath)
+    {
+        // select next cell
+        [self.menu.tableView
+         selectRowAtIndexPath:self.st_nextCellIndexPath
+         animated:YES
+         scrollPosition:UITableViewScrollPositionTop];
+    }
+    else
+    {
+        // end editing, deselect cell
+        [self.menu.tableView
+         deselectRowAtIndexPath:[self.menu.tableView indexPathForCell:self]
+         animated:NO];
+    }
+    
+    if (self.st_doneOnReturn)
+    {
+        [self.menu done];
+    }
+    
     return NO;
 }
 

@@ -32,6 +32,10 @@
 
 - (void)setLoading:(BOOL)loading animated:(BOOL)animated;
 
+// This method can be called by others to "finish" whatever you are doing.
+// The default does nothing.
+- (void)done;
+
 // create an instance of a menu
 + (id)menu;
 

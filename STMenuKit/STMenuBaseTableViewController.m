@@ -216,6 +216,11 @@
     }
 }
 
+- (void)done
+{
+    
+}
+
 // This is called when a menu is reused. Reset all editable properties.
 - (void)st_prepareForReuse
 {
