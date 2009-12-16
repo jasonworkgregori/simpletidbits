@@ -26,6 +26,8 @@
 		799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 799F708010C8C8D80055C744 /* STMenuFormTableViewCell.m */; };
 		79B303EE10A7463C00CE423D /* STMenuProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B303EC10A7463C00CE423D /* STMenuProtocol.h */; };
 		79B304A810A7A6BB00CE423D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B304A710A7A6BB00CE423D /* UIKit.framework */; };
+		79B7389210D89A1F003F5027 /* STMenuFormLabelTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B7389010D89A1F003F5027 /* STMenuFormLabelTableViewCell.h */; };
+		79B7389310D89A1F003F5027 /* STMenuFormLabelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B7389110D89A1F003F5027 /* STMenuFormLabelTableViewCell.m */; };
 		79D1798A10B8AD73008A5B54 /* STMenuTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D1798810B8AD73008A5B54 /* STMenuTableViewCell.h */; };
 		79D1798B10B8AD73008A5B54 /* STMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D1798910B8AD73008A5B54 /* STMenuTableViewCell.m */; };
 		79D1799410B8B2A8008A5B54 /* STMenuFormattedSectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 79D1799210B8B2A8008A5B54 /* STMenuFormattedSectionController.h */; };
@@ -61,6 +63,8 @@
 		799F708010C8C8D80055C744 /* STMenuFormTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuFormTableViewCell.m; sourceTree = "<group>"; };
 		79B303EC10A7463C00CE423D /* STMenuProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuProtocol.h; sourceTree = "<group>"; };
 		79B304A710A7A6BB00CE423D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		79B7389010D89A1F003F5027 /* STMenuFormLabelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuFormLabelTableViewCell.h; sourceTree = "<group>"; };
+		79B7389110D89A1F003F5027 /* STMenuFormLabelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuFormLabelTableViewCell.m; sourceTree = "<group>"; };
 		79D1798810B8AD73008A5B54 /* STMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuTableViewCell.h; sourceTree = "<group>"; };
 		79D1798910B8AD73008A5B54 /* STMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMenuTableViewCell.m; sourceTree = "<group>"; };
 		79D1799210B8B2A8008A5B54 /* STMenuFormattedSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMenuFormattedSectionController.h; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 			children = (
 				799F707F10C8C8D80055C744 /* STMenuFormTableViewCell.h */,
 				799F708010C8C8D80055C744 /* STMenuFormTableViewCell.m */,
+				79B7389010D89A1F003F5027 /* STMenuFormLabelTableViewCell.h */,
+				79B7389110D89A1F003F5027 /* STMenuFormLabelTableViewCell.m */,
 				799F707B10C8C5150055C744 /* STMenuFormTableViewController.h */,
 				799F707C10C8C5150055C744 /* STMenuFormTableViewController.m */,
 			);
@@ -210,6 +216,7 @@
 				799F708110C8C8D80055C744 /* STMenuFormTableViewCell.h in Headers */,
 				794C780F10CA17AF00717975 /* STMenuTextFieldTableViewCell.h in Headers */,
 				79F010E610D7329300CFDBD6 /* STLoadingView.h in Headers */,
+				79B7389210D89A1F003F5027 /* STMenuFormLabelTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +276,7 @@
 				799F708210C8C8D80055C744 /* STMenuFormTableViewCell.m in Sources */,
 				794C781010CA17AF00717975 /* STMenuTextFieldTableViewCell.m in Sources */,
 				79F010E710D7329300CFDBD6 /* STLoadingView.m in Sources */,
+				79B7389310D89A1F003F5027 /* STMenuFormLabelTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

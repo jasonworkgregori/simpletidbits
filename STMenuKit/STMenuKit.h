@@ -15,4 +15,5 @@
 
 // form menu
 #import "STMenuFormTableViewCell.h"
+#import "STMenuFormLabelTableViewCell.h"
 #import "STMenuFormTableViewController.h"
