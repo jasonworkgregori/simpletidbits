@@ -8,6 +8,7 @@
 #import "STMenuBasicSectionController.h"
 #import "STMenuBasicTableViewController.h"
 #import "STLoadingView.h"
+#import "STMenuBaseViewController.h"
 
 // edit menu
 #import "STMenuEditTableViewCell.h"

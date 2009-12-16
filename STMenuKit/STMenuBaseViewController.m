@@ -1,16 +1,15 @@
 //
-//  STMenuBaseTableViewController.m
+//  STMenuBaseViewController.m
 //  STMenuKit
 //
-//  Created by Jason Gregori on 11/12/09.
-//  Copyright 2009 Jason Gregori. All rights reserved.
+//  Created by Jason Gregori on 12/14/09.
+//  Copyright 2009 Slingshot Labs. All rights reserved.
 //
 
-#import "STMenuBaseTableViewController.h"
+#import "STMenuBaseViewController.h"
 #import "STMenuMaker.h"
-#import "STMenuTableViewCell.h"
 
-@interface STMenuBaseTableViewController ()
+@interface STMenuBaseViewController ()
 
 @property (nonatomic, copy)     NSString    *st_plistName;
 
@@ -21,13 +20,11 @@
 
 @end
 
-
-@implementation STMenuBaseTableViewController
+@implementation STMenuBaseViewController
 @synthesize value = _value, key = _key, st_plistName = _plistName,
             st_schema = _schema, parentMenuShouldSave = _parentMenuShouldSave,
             st_subMenu = _subMenu, st_cachedMenus = _cachedMenus,
             loadingMessage = _loadingMessage, loadingView = _loadingView;
-
 
 // create an instance of a menu
 + (id)menu
@@ -35,11 +32,11 @@
     return [[[self alloc] init] autorelease];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if (self = [super initWithStyle:style])
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
-        _cachedMenus    = [[NSMutableDictionary alloc] init];
+        _cachedMenus	= [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -56,68 +53,12 @@
     [super dealloc];
 }
 
-- (Class)st_defaultCellClass
-{
-    return [STMenuTableViewCell class];
-}
-
-- (NSString *)st_customCellPrefix
-{
-    return nil;
-}
-
 // default menu class
 - (Class)st_defaultMenuClass
 {
     return [self class];
 }
 
-- (STMenuTableViewCell *)st_cellWithCellData:(id)data
-                                         key:(NSString *)key
-{
-    NSString    *className  = [STMenuMaker classNameForData:data];
-    Class       cellClass       = [STMenuTableViewCell
-                                   classForCellClassName:className
-                                   customPrefix:[self st_customCellPrefix]
-                                   defaultClass:[self st_defaultCellClass]];
-    NSString    *cellIdentifier = [cellClass cellIdentifier];
-    STMenuTableViewCell *cell   = nil;
-    
-    if (cellIdentifier)
-    {
-        // see if there is already one
-        cell    = (id)[self.tableView
-                       dequeueReusableCellWithIdentifier:cellIdentifier];
-    }
-    
-    if (!cell)
-    {
-        // create a cell
-        cell    = [[[cellClass alloc]
-                    initWithStyle:UITableViewCellStyleDefault
-                    reuseIdentifier:cellIdentifier]
-                   autorelease];
-        cell.menu   = self;
-        [self st_initializeCell:cell];
-    }
-    
-    if (!key || ![cell.key isEqualToString:key])
-    {
-        // set up the properties
-        [STMenuMaker setInstance:cell properties:data];
-        
-        // key
-        cell.key        = key;
-    }
-	
-    return cell;
-}
-
-// This is called whenever a cell is created. Default does nothing.
-- (void)st_initializeCell:(STMenuTableViewCell *)cell
-{
-    
-}
 
 #pragma mark STMenuProtocol
 
@@ -181,7 +122,7 @@
 - (void)setLoading:(BOOL)loading animated:(BOOL)animated
 {
     _loading    = loading;
-        
+    
     if (![self isViewLoaded])
     {
         // dont load the view on accident
@@ -192,15 +133,17 @@
     
     if (loading && !self.loadingView)
     {
-        // TODO: Maybe we should disable scrolling?
-        self.loadingView    = [[[STLoadingView alloc] init] autorelease];
-        self.loadingView.text   = self.loadingMessage;
-        self.loadingView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+        self.loadingView	= [[[STLoadingView alloc] init] autorelease];
+        self.loadingView.text	= self.loadingMessage;
+        self.loadingView.autoresizingMask
+          = (UIViewAutoresizingFlexibleTopMargin
+             | UIViewAutoresizingFlexibleBottomMargin
+             | UIViewAutoresizingFlexibleLeftMargin
+             | UIViewAutoresizingFlexibleRightMargin);
         self.loadingView.center
           = CGPointMake(floor(self.view.frame.size.width/2.0),
-                        floor(self.tableView.contentOffset.y
-                              + self.view.frame.size.height/2.0));
-        self.loadingView.alpha  = 0;
+                        floor(self.view.frame.size.height/2.0));
+        self.loadingView.alpha	= 0;
         [UIView beginAnimations:nil context:NULL];
         [self.view addSubview:self.loadingView];
         self.loadingView.alpha  = 1;
@@ -267,6 +210,7 @@
                                 defaultClass:[self st_defaultMenuClass]];
 }
 
+
 #pragma mark -
 #pragma mark UIViewController
 
@@ -292,7 +236,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-        
+    
     if (self.st_subMenu)
     {
         // If there is a submenu we must have just popped back from it
@@ -307,48 +251,5 @@
     }
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-#pragma mark -
-#pragma mark Delegate Methods
-#pragma mark Table view methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-
-// Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
-    return 0;
-}
-
-
-// Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[[UITableViewCell alloc]
-                 initWithStyle:UITableViewCellStyleDefault
-                 reuseIdentifier:CellIdentifier]
-                autorelease];
-    }
-    
-    // Set up the cell...
-	
-    return cell;
-}
-
 
 @end
-
